@@ -130,5 +130,67 @@ namespace AplikasiPembukuan.Model.Repository
 
             return listOfKaryawan;
         }
+
+        public Karyawan ReadByID(Karyawan getKaryawan)
+        {
+            var karyawan = new Karyawan();
+
+            try
+            {
+                string sql = @"SELECT K.KodeKaryawan, K.Nama, K.Gender, K.Telepon, A.HakAkses
+                                FROM Karyawan K INNER JOIN Akun A ON K.KodeKaryawan = A.KodeKaryawan
+                                WHERE K.KodeKaryawan = @KodeKaryawan";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@KodeKaryawan", getKaryawan.KodeKaryawan);
+
+                    using (MySqlDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            karyawan.Nama = dtr["Nama"].ToString();
+                            karyawan.Gender = dtr["Gender"].ToString();
+                            karyawan.Telepon = dtr["Telepon"].ToString();
+                            karyawan.HakAkses = dtr["HakAkses"].ToString();
+                            karyawan.KodeKaryawan = dtr["KodeKaryawan"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadByID error: {0}", ex.Message);
+            }
+
+            return karyawan;
+        }
+
+        public string GetLastID()
+        {
+            string lastID = "0";
+
+            try
+            {
+                string sql = @"SELECT RIGHT(KodeKaryawan, 3) AS lastID FROM Karyawan ORDER BY KodeKaryawan DESC LIMIT 1";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            lastID = "KR" + (int.Parse(dtr["lastID"].ToString()) + 1).ToString("D3");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("GetLastID error: {0}", ex.Message);
+            }
+
+            return lastID;
+        }
     }
 }
