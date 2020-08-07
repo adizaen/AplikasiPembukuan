@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Dapper.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\SmartLibrary\SmartLibrary\bin\Debug\Guna.UI.dll</HintPath>
     </Reference>
@@ -56,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AkunController.cs" />
+    <Compile Include="Controller\KaryawanController.cs" />
+    <Compile Include="Controller\PembukuanController.cs" />
     <Compile Include="Model\Context\DbContext.cs" />
     <Compile Include="Model\Entity\Akun.cs" />
     <Compile Include="Model\Entity\Karyawan.cs" />
@@ -92,7 +91,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="View\DataSet\" />
     <Folder Include="View\Report\" />
   </ItemGroup>
