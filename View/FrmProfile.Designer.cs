@@ -45,11 +45,15 @@
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.txtKode = new Guna.UI.WinForms.GunaTextBox();
             this.txtTempatLahir = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnSimpan = new Guna.UI.WinForms.GunaButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnUbahProfile = new Guna.UI.WinForms.GunaButton();
             this.btnSimpanProfile = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaGroupBox3
@@ -58,6 +62,7 @@
             this.gunaGroupBox3.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox3.BorderColor = System.Drawing.Color.Black;
             this.gunaGroupBox3.BorderSize = 1;
+            this.gunaGroupBox3.Controls.Add(this.gunaPictureBox2);
             this.gunaGroupBox3.Controls.Add(this.gunaLabel1);
             this.gunaGroupBox3.Controls.Add(this.cboLihatPass);
             this.gunaGroupBox3.Controls.Add(this.btnSimpan);
@@ -69,9 +74,9 @@
             this.gunaGroupBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox3.ForeColor = System.Drawing.Color.White;
             this.gunaGroupBox3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaGroupBox3.Location = new System.Drawing.Point(184, 334);
+            this.gunaGroupBox3.Location = new System.Drawing.Point(111, 334);
             this.gunaGroupBox3.Name = "gunaGroupBox3";
-            this.gunaGroupBox3.Size = new System.Drawing.Size(575, 302);
+            this.gunaGroupBox3.Size = new System.Drawing.Size(728, 302);
             this.gunaGroupBox3.TabIndex = 4;
             this.gunaGroupBox3.Text = "Update Akun";
             this.gunaGroupBox3.TextLocation = new System.Drawing.Point(10, 8);
@@ -81,7 +86,7 @@
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel1.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel1.Location = new System.Drawing.Point(33, 149);
+            this.gunaLabel1.Location = new System.Drawing.Point(192, 154);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(107, 19);
             this.gunaLabel1.TabIndex = 37;
@@ -95,7 +100,7 @@
             this.cboLihatPass.FillColor = System.Drawing.Color.White;
             this.cboLihatPass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLihatPass.ForeColor = System.Drawing.Color.Black;
-            this.cboLihatPass.Location = new System.Drawing.Point(166, 187);
+            this.cboLihatPass.Location = new System.Drawing.Point(325, 192);
             this.cboLihatPass.Name = "cboLihatPass";
             this.cboLihatPass.Size = new System.Drawing.Size(121, 21);
             this.cboLihatPass.TabIndex = 36;
@@ -106,7 +111,7 @@
             this.gunaLabel3.AutoSize = true;
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel3.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel3.Location = new System.Drawing.Point(33, 107);
+            this.gunaLabel3.Location = new System.Drawing.Point(192, 112);
             this.gunaLabel3.Name = "gunaLabel3";
             this.gunaLabel3.Size = new System.Drawing.Size(99, 19);
             this.gunaLabel3.TabIndex = 1;
@@ -117,7 +122,7 @@
             this.gunaLabel2.AutoSize = true;
             this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel2.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel2.Location = new System.Drawing.Point(33, 65);
+            this.gunaLabel2.Location = new System.Drawing.Point(192, 70);
             this.gunaLabel2.Name = "gunaLabel2";
             this.gunaLabel2.Size = new System.Drawing.Size(103, 19);
             this.gunaLabel2.TabIndex = 1;
@@ -133,7 +138,7 @@
             this.txtKonfirmasi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtKonfirmasi.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtKonfirmasi.ForeColor = System.Drawing.Color.Black;
-            this.txtKonfirmasi.Location = new System.Drawing.Point(166, 144);
+            this.txtKonfirmasi.Location = new System.Drawing.Point(325, 149);
             this.txtKonfirmasi.Name = "txtKonfirmasi";
             this.txtKonfirmasi.PasswordChar = '\0';
             this.txtKonfirmasi.SelectedText = "";
@@ -150,7 +155,7 @@
             this.txtPassBaru.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPassBaru.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtPassBaru.ForeColor = System.Drawing.Color.Black;
-            this.txtPassBaru.Location = new System.Drawing.Point(166, 101);
+            this.txtPassBaru.Location = new System.Drawing.Point(325, 106);
             this.txtPassBaru.Name = "txtPassBaru";
             this.txtPassBaru.PasswordChar = '\0';
             this.txtPassBaru.SelectedText = "";
@@ -167,7 +172,7 @@
             this.txtUserBaru.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUserBaru.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtUserBaru.ForeColor = System.Drawing.Color.Black;
-            this.txtUserBaru.Location = new System.Drawing.Point(166, 58);
+            this.txtUserBaru.Location = new System.Drawing.Point(325, 63);
             this.txtUserBaru.Name = "txtUserBaru";
             this.txtUserBaru.PasswordChar = '\0';
             this.txtUserBaru.SelectedText = "";
@@ -180,6 +185,7 @@
             this.gunaGroupBox2.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Black;
             this.gunaGroupBox2.BorderSize = 1;
+            this.gunaGroupBox2.Controls.Add(this.gunaPictureBox1);
             this.gunaGroupBox2.Controls.Add(this.btnUbahProfile);
             this.gunaGroupBox2.Controls.Add(this.btnSimpanProfile);
             this.gunaGroupBox2.Controls.Add(this.cboGender);
@@ -193,9 +199,9 @@
             this.gunaGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox2.ForeColor = System.Drawing.Color.White;
             this.gunaGroupBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaGroupBox2.Location = new System.Drawing.Point(184, 23);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(111, 23);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
-            this.gunaGroupBox2.Size = new System.Drawing.Size(575, 287);
+            this.gunaGroupBox2.Size = new System.Drawing.Size(728, 287);
             this.gunaGroupBox2.TabIndex = 3;
             this.gunaGroupBox2.Text = "Profile";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
@@ -214,7 +220,7 @@
             this.cboGender.Items.AddRange(new object[] {
             "Laki - Laki",
             "Perempuan"});
-            this.cboGender.Location = new System.Drawing.Point(166, 182);
+            this.cboGender.Location = new System.Drawing.Point(325, 180);
             this.cboGender.Name = "cboGender";
             this.cboGender.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cboGender.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -231,7 +237,7 @@
             this.txtTelepon.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTelepon.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTelepon.ForeColor = System.Drawing.Color.Black;
-            this.txtTelepon.Location = new System.Drawing.Point(166, 138);
+            this.txtTelepon.Location = new System.Drawing.Point(325, 136);
             this.txtTelepon.Name = "txtTelepon";
             this.txtTelepon.PasswordChar = '\0';
             this.txtTelepon.SelectedText = "";
@@ -243,7 +249,7 @@
             this.gunaLabel11.AutoSize = true;
             this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel11.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel11.Location = new System.Drawing.Point(33, 185);
+            this.gunaLabel11.Location = new System.Drawing.Point(192, 183);
             this.gunaLabel11.Name = "gunaLabel11";
             this.gunaLabel11.Size = new System.Drawing.Size(54, 19);
             this.gunaLabel11.TabIndex = 42;
@@ -254,7 +260,7 @@
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel7.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel7.Location = new System.Drawing.Point(33, 144);
+            this.gunaLabel7.Location = new System.Drawing.Point(192, 142);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(81, 19);
             this.gunaLabel7.TabIndex = 42;
@@ -265,7 +271,7 @@
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel8.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel8.Location = new System.Drawing.Point(33, 100);
+            this.gunaLabel8.Location = new System.Drawing.Point(192, 98);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(101, 19);
             this.gunaLabel8.TabIndex = 44;
@@ -276,7 +282,7 @@
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel6.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel6.Location = new System.Drawing.Point(33, 59);
+            this.gunaLabel6.Location = new System.Drawing.Point(192, 57);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(103, 19);
             this.gunaLabel6.TabIndex = 41;
@@ -292,7 +298,7 @@
             this.txtKode.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtKode.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtKode.ForeColor = System.Drawing.Color.Black;
-            this.txtKode.Location = new System.Drawing.Point(166, 51);
+            this.txtKode.Location = new System.Drawing.Point(325, 49);
             this.txtKode.Name = "txtKode";
             this.txtKode.PasswordChar = '\0';
             this.txtKode.SelectedText = "";
@@ -310,12 +316,23 @@
             this.txtTempatLahir.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTempatLahir.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTempatLahir.ForeColor = System.Drawing.Color.Black;
-            this.txtTempatLahir.Location = new System.Drawing.Point(166, 95);
+            this.txtTempatLahir.Location = new System.Drawing.Point(325, 93);
             this.txtTempatLahir.Name = "txtTempatLahir";
             this.txtTempatLahir.PasswordChar = '\0';
             this.txtTempatLahir.SelectedText = "";
             this.txtTempatLahir.Size = new System.Drawing.Size(370, 30);
             this.txtTempatLahir.TabIndex = 36;
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::AplikasiPembukuan.Properties.Resources.key;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(33, 63);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(138, 145);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 52;
+            this.gunaPictureBox2.TabStop = false;
             // 
             // btnSimpan
             // 
@@ -331,7 +348,7 @@
             this.btnSimpan.Image = global::AplikasiPembukuan.Properties.Resources.check;
             this.btnSimpan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSimpan.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSimpan.Location = new System.Drawing.Point(166, 236);
+            this.btnSimpan.Location = new System.Drawing.Point(325, 241);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSimpan.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -342,6 +359,17 @@
             this.btnSimpan.TabIndex = 35;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::AplikasiPembukuan.Properties.Resources.profile;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(33, 57);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(138, 145);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 51;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // btnUbahProfile
             // 
@@ -357,7 +385,7 @@
             this.btnUbahProfile.Image = global::AplikasiPembukuan.Properties.Resources.edit3;
             this.btnUbahProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUbahProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUbahProfile.Location = new System.Drawing.Point(266, 230);
+            this.btnUbahProfile.Location = new System.Drawing.Point(425, 228);
             this.btnUbahProfile.Name = "btnUbahProfile";
             this.btnUbahProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnUbahProfile.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -383,7 +411,7 @@
             this.btnSimpanProfile.Image = global::AplikasiPembukuan.Properties.Resources.check;
             this.btnSimpanProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSimpanProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSimpanProfile.Location = new System.Drawing.Point(166, 230);
+            this.btnSimpanProfile.Location = new System.Drawing.Point(325, 228);
             this.btnSimpanProfile.Name = "btnSimpanProfile";
             this.btnSimpanProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSimpanProfile.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -412,6 +440,8 @@
             this.gunaGroupBox3.PerformLayout();
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,5 +468,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox txtKode;
         private Guna.UI.WinForms.GunaTextBox txtTempatLahir;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
     }
 }

@@ -69,6 +69,12 @@
     <Compile Include="Model\Repository\AkunRepository.cs" />
     <Compile Include="Model\Repository\KaryawanRepository.cs" />
     <Compile Include="Model\Repository\PembukuanRepository.cs" />
+    <Compile Include="View\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmInputKaryawan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmInputKaryawan.resx">
       <DependentUpon>FrmInputKaryawan.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +210,11 @@
   <ItemGroup>
     <Content Include="book.ico" />
     <Content Include="Bookkeeping.ico" />
+    <None Include="Resources\whatsapp1.png" />
+    <None Include="Resources\gmail.png" />
+    <None Include="Resources\logout white.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\profile.png" />
     <None Include="Resources\iconfinder_contacts_1055082.png" />
     <None Include="Resources\setting1.png" />
     <None Include="Resources\report.png" />

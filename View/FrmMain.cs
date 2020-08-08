@@ -38,7 +38,13 @@ namespace AplikasiPembukuan.View
 
         private void menuDashboard_Click(object sender, EventArgs e)
         {
+            FrmDashboard _frmDashboard = new FrmDashboard();
+            this._frmDashboard = _frmDashboard;
 
+            if (!OpenFormOnPanel(this._frmDashboard))
+                listOfForm.Add(this._frmDashboard);
+
+            CheckedButtonMenu(menuDashboard);
         }
 
         private void menuKaryawan_Click(object sender, EventArgs e)
