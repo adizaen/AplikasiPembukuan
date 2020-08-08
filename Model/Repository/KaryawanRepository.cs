@@ -131,39 +131,57 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfKaryawan;
         }
 
-        public Karyawan ReadByID(Karyawan getKaryawan)
+        public List<Karyawan> ReadCustom(string cari, int index)
         {
-            var karyawan = new Karyawan();
+            List<Karyawan> listOfKaryawan = new List<Karyawan>();
 
             try
             {
-                string sql = @"SELECT K.KodeKaryawan, K.Nama, K.Gender, K.Telepon, A.HakAkses
+                string sql;
+
+                if (index == 0)
+                {
+                    sql = @"SELECT K.KodeKaryawan, K.Nama, K.Gender, K.Telepon, A.HakAkses
                                 FROM Karyawan K INNER JOIN Akun A ON K.KodeKaryawan = A.KodeKaryawan
-                                WHERE K.KodeKaryawan = @KodeKaryawan";
+                                WHERE K.Nama LIKE @Nama ORDER BY K.KodeKaryawan ASC";
+                } 
+                else
+                {
+                    sql = @"SELECT K.KodeKaryawan, K.Nama, K.Gender, K.Telepon, A.HakAkses
+                                FROM Karyawan K INNER JOIN Akun A ON K.KodeKaryawan = A.KodeKaryawan
+                                WHERE K.KodeKaryawan LIKE @KodeKaryawan ORDER BY K.KodeKaryawan ASC";
+                }
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@KodeKaryawan", getKaryawan.KodeKaryawan);
+                    if (index == 0)
+                        cmd.Parameters.AddWithValue("@Nama", "%" + cari + "%");
+                    else
+                        cmd.Parameters.AddWithValue("@KodeKaryawan", "%" + cari + "%");
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {
                         while (dtr.Read())
                         {
+                            var karyawan = new Karyawan();
+
+                            karyawan.KodeKaryawan = dtr["KodeKaryawan"].ToString();
                             karyawan.Nama = dtr["Nama"].ToString();
                             karyawan.Gender = dtr["Gender"].ToString();
                             karyawan.Telepon = dtr["Telepon"].ToString();
                             karyawan.HakAkses = dtr["HakAkses"].ToString();
-                            karyawan.KodeKaryawan = dtr["KodeKaryawan"].ToString();
+
+                            listOfKaryawan.Add(karyawan);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.Print("ReadByID error: {0}", ex.Message);
+                System.Diagnostics.Debug.Print("ReadCustom error: {0}", ex.Message);
             }
 
-            return karyawan;
+            return listOfKaryawan;
         }
 
         public string GetLastID()

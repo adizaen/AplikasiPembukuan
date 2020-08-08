@@ -131,6 +131,7 @@
             this.btnExit.Animated = true;
             this.btnExit.AnimationHoverSpeed = 0.07F;
             this.btnExit.AnimationSpeed = 0.03F;
+            this.btnExit.CustomClick = true;
             this.btnExit.IconColor = System.Drawing.Color.Black;
             this.btnExit.IconSize = 15F;
             this.btnExit.Location = new System.Drawing.Point(904, 0);
@@ -140,6 +141,7 @@
             this.btnExit.OnPressedColor = System.Drawing.Color.Black;
             this.btnExit.Size = new System.Drawing.Size(48, 29);
             this.btnExit.TabIndex = 2;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // txtKodeUser
             // 
@@ -387,6 +389,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMain";
+            this.Shown += new System.EventHandler(this.FrmMain_Shown);
             this.panelUtama.ResumeLayout(false);
             this.panelUtama.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);

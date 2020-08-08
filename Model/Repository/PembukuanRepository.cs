@@ -51,7 +51,7 @@ namespace AplikasiPembukuan.Model.Repository
         {
             int result = 0;
 
-            string sql = @"UPDATE Karyawan SET Tanggal = @Tanggal, Item = @Item, Debit = @Debit, Kredit = @Kredit,
+            string sql = @"UPDATE Pembukuan SET Tanggal = @Tanggal, Item = @Item, Debit = @Debit, Kredit = @Kredit,
                             Saldo = @Saldo, Laba = @Laba, Keterangan = @Keterangan WHERE ID = @ID";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
@@ -80,25 +80,48 @@ namespace AplikasiPembukuan.Model.Repository
 
         public int Delete(Pembukuan buku)
         {
-            int result = 0;
+            int result = 0, result1 = 0;
+            string tanggal = buku.Tanggal.ToString("yyyyMMdd");
 
-            string sql = @"DELETE FROM Pembukuan WHERE Tanggal = @Tanggal";
+            string sql = @"CALL UpdateSaldo(@Tanggal, @ID, @Saldo, @Kredit, @Debit)";
+            string sql1 = @"DELETE FROM Pembukuan WHERE ID = @ID";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@Tanggal", buku.Tanggal);
+                cmd.Parameters.AddWithValue("@Tanggal", tanggal);
+                cmd.Parameters.AddWithValue("@ID", buku.ID);
+                cmd.Parameters.AddWithValue("@Saldo", buku.Saldo);
+                cmd.Parameters.AddWithValue("@Kredit", buku.Kredit);
+                cmd.Parameters.AddWithValue("@Debit", buku.Debit);
 
                 try
                 {
                     result = cmd.ExecuteNonQuery();
+
+                    using (MySqlCommand cmd1 = new MySqlCommand(sql1, _conn))
+                    {
+                        cmd1.Parameters.AddWithValue("@ID", buku.ID);
+
+                        try
+                        {
+                            result1 = cmd1.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.Print("Delete error: {0}", ex.Message);
+                    System.Diagnostics.Debug.Print("Update saldo error: {0}", ex.Message);
                 }
             }
 
-            return result;
+            if (result > 0 && result1 > 0)
+                return result;
+            else
+                return 0;
         }
 
         public List<Pembukuan> ReadAll()
@@ -139,8 +162,10 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByDate(Pembukuan pembukuan)
+        public List<Pembukuan> ReadByDate(DateTime tanggal)
         {
+            var formatTanggal = tanggal.ToString("yyyy-MM-dd");
+
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             try
@@ -149,7 +174,7 @@ namespace AplikasiPembukuan.Model.Repository
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@Tanggal", pembukuan.Tanggal);
+                    cmd.Parameters.AddWithValue("@Tanggal", formatTanggal);
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {
@@ -213,6 +238,36 @@ namespace AplikasiPembukuan.Model.Repository
             }
 
             return listOfBuku;
+        }
+
+        public double GetLastSaldo(DateTime tanggal)
+        {
+            double saldo = 0;
+            var formatTanggal = tanggal.ToString("yyyy-MM-dd");
+
+            try
+            {
+                string sql = @"SELECT Saldo FROM Pembukuan WHERE Tanggal = @Tanggal ORDER BY ID DESC LIMIT 1";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    cmd.Parameters.AddWithValue("@Tanggal", formatTanggal);
+
+                    using (MySqlDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            saldo = double.Parse(dtr["Saldo"].ToString());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadLastSaldo error: {0}", ex.Message);
+            }
+
+            return saldo;
         }
     }
 }

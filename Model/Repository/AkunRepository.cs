@@ -70,6 +70,30 @@ namespace AplikasiPembukuan.Model.Repository
             return result;
         }
 
+        public int UpdateHakAkses(Akun akun)
+        {
+            int result = 0;
+
+            string sql = @"UPDATE Akun SET HakAkses = @HakAkses WHERE KodeKaryawan = @KodeKaryawan";
+
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            {
+                cmd.Parameters.AddWithValue("@HakAkses", akun.HakAkses);
+                cmd.Parameters.AddWithValue("@KodeKaryawan", akun.KodeKaryawan);
+
+                try
+                {
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("UpdateHakAkses error: {0}", ex.Message);
+                }
+            }
+
+            return result;
+        }
+
         public Akun IsValidAccess(Akun akunLogin)
         {
             var akun = new Akun();

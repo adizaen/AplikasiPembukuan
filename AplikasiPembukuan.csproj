@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AkunController.cs" />
+    <Compile Include="Controller\GeneralSetting.cs" />
     <Compile Include="Controller\KaryawanController.cs" />
     <Compile Include="Controller\PembukuanController.cs" />
     <Compile Include="Model\Context\DbContext.cs" />

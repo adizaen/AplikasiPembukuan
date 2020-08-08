@@ -69,6 +69,22 @@ namespace AplikasiPembukuan.View
             CheckedButtonMenu(menuPembukuan);
         }
 
+        private void FrmMain_Shown(object sender, EventArgs e)
+        {
+            menuDashboard_Click(this, e);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            var pesan = "Apakah anda yakin ingin keluar aplikasi?";
+            DialogResult = MessageBox.Show(pesan, "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (DialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
         private void menuLaporan_Click(object sender, EventArgs e)
         {
             FrmLaporan _frmLaporan = new FrmLaporan();

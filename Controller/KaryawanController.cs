@@ -122,17 +122,17 @@ namespace AplikasiPembukuan.Controller
             return listOfKaryawan;
         }
 
-        public Karyawan ReadByID(Karyawan getKaryawan)
+        public List<Karyawan> ReadCustom(string cari, int index)
         {
-            var karyawan = new Karyawan();
+            List<Karyawan> listOfKaryawan = new List<Karyawan>();
 
             using (DbContext context = new DbContext())
             {
                 _repository = new KaryawanRepository(context);
-                karyawan = _repository.ReadByID(getKaryawan);
+                listOfKaryawan = _repository.ReadCustom(cari, index);
             }
 
-            return karyawan;
+            return listOfKaryawan;
         }
 
         public string GetLastID()

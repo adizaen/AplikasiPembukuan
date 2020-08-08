@@ -128,14 +128,14 @@ namespace AplikasiPembukuan.Controller
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByDate(Pembukuan buku)
+        public List<Pembukuan> ReadByDate(DateTime tanggal)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             using (DbContext context = new DbContext())
             {
                 _repository = new PembukuanRepository(context);
-                listOfBuku = _repository.ReadByDate(buku);
+                listOfBuku = _repository.ReadByDate(tanggal);
             }
 
             return listOfBuku;
@@ -152,6 +152,19 @@ namespace AplikasiPembukuan.Controller
             }
 
             return listOfBuku;
+        }
+
+        public double GetLastSaldo(DateTime tanggal)
+        {
+            double saldo = 0;
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new PembukuanRepository(context);
+                saldo = _repository.GetLastSaldo(tanggal);
+            }
+
+            return saldo;
         }
     }
 }

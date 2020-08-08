@@ -79,5 +79,30 @@ namespace AplikasiPembukuan.Controller
 
             return result;
         }
+
+        public int UpdateHakAkses(Akun akun)
+        {
+            int result = 0;
+
+            if (string.IsNullOrEmpty(akun.KodeKaryawan))
+            {
+                MessageBox.Show("Kode karyawan harus diisi !", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            if (string.IsNullOrEmpty(akun.HakAkses.ToString()))
+            {
+                MessageBox.Show("Hak akses harus diisi !", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new AkunRepository(context);
+                result = _repository.UpdateHakAkses(akun);
+            }
+
+            return result;
+        }
     }
 }

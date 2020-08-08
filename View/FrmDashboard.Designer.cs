@@ -152,6 +152,7 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // gunaGroupBox2
             // 
@@ -301,6 +302,7 @@
             this.btnLogout.TabIndex = 27;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // gunaPictureBox2
             // 

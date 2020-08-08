@@ -30,27 +30,34 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPembukuan));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtKaryawan = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.dgv = new Guna.UI.WinForms.GunaDataGridView();
+            this.dtTanggal = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
+            this.txtTotalDebit = new Guna.UI.WinForms.GunaTextBox();
+            this.txtTotalKredit = new Guna.UI.WinForms.GunaTextBox();
+            this.btnHapus = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnTambah = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnUbah = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tempat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hak = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Keterangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtTanggal = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
-            this.btnHapus = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnTambah = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnUbah = new Guna.UI.WinForms.GunaAdvenceButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,20 +118,21 @@
             this.dgv.ColumnHeadersHeight = 30;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
+            this.ID,
             this.Nama,
             this.Gender,
             this.Tempat,
             this.Hak,
             this.Laba,
             this.Keterangan});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.Location = new System.Drawing.Point(26, 97);
@@ -157,55 +165,6 @@
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 80;
-            this.No.Name = "No";
-            this.No.Width = 80;
-            // 
-            // Nama
-            // 
-            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nama.HeaderText = "Nama Item";
-            this.Nama.MinimumWidth = 250;
-            this.Nama.Name = "Nama";
-            this.Nama.Width = 250;
-            // 
-            // Gender
-            // 
-            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Gender.HeaderText = "Debit";
-            this.Gender.MinimumWidth = 100;
-            this.Gender.Name = "Gender";
-            // 
-            // Tempat
-            // 
-            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tempat.HeaderText = "Kredit";
-            this.Tempat.MinimumWidth = 100;
-            this.Tempat.Name = "Tempat";
-            // 
-            // Hak
-            // 
-            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Hak.HeaderText = "Saldo";
-            this.Hak.MinimumWidth = 100;
-            this.Hak.Name = "Hak";
-            // 
-            // Laba
-            // 
-            this.Laba.HeaderText = "Laba";
-            this.Laba.MinimumWidth = 100;
-            this.Laba.Name = "Laba";
-            // 
-            // Keterangan
-            // 
-            this.Keterangan.HeaderText = "Keterangan";
-            this.Keterangan.MinimumWidth = 150;
-            this.Keterangan.Name = "Keterangan";
-            // 
             // dtTanggal
             // 
             this.dtTanggal.BaseColor = System.Drawing.Color.White;
@@ -227,6 +186,7 @@
             this.dtTanggal.TabIndex = 40;
             this.dtTanggal.Text = "07 August 2020";
             this.dtTanggal.Value = new System.DateTime(2020, 8, 7, 20, 46, 33, 522);
+            this.dtTanggal.ValueChanged += new System.EventHandler(this.dtTanggal_ValueChanged);
             // 
             // gunaLabel3
             // 
@@ -248,39 +208,45 @@
             this.gunaLabel4.TabIndex = 41;
             this.gunaLabel4.Text = "Total Kredit";
             // 
-            // gunaTextBox1
+            // txtTotalDebit
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(705, 18);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(221, 28);
-            this.gunaTextBox1.TabIndex = 42;
+            this.txtTotalDebit.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalDebit.BaseColor = System.Drawing.Color.White;
+            this.txtTotalDebit.BorderColor = System.Drawing.Color.Silver;
+            this.txtTotalDebit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalDebit.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtTotalDebit.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTotalDebit.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtTotalDebit.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTotalDebit.Location = new System.Drawing.Point(739, 18);
+            this.txtTotalDebit.Name = "txtTotalDebit";
+            this.txtTotalDebit.PasswordChar = '\0';
+            this.txtTotalDebit.ReadOnly = true;
+            this.txtTotalDebit.SelectedText = "";
+            this.txtTotalDebit.Size = new System.Drawing.Size(187, 28);
+            this.txtTotalDebit.TabIndex = 42;
+            this.txtTotalDebit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalDebit.TextChanged += new System.EventHandler(this.txtTotalDebit_TextChanged);
             // 
-            // gunaTextBox2
+            // txtTotalKredit
             // 
-            this.gunaTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(705, 52);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(221, 28);
-            this.gunaTextBox2.TabIndex = 42;
+            this.txtTotalKredit.BackColor = System.Drawing.Color.Transparent;
+            this.txtTotalKredit.BaseColor = System.Drawing.Color.White;
+            this.txtTotalKredit.BorderColor = System.Drawing.Color.Silver;
+            this.txtTotalKredit.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalKredit.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtTotalKredit.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTotalKredit.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtTotalKredit.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTotalKredit.Location = new System.Drawing.Point(739, 52);
+            this.txtTotalKredit.Name = "txtTotalKredit";
+            this.txtTotalKredit.PasswordChar = '\0';
+            this.txtTotalKredit.ReadOnly = true;
+            this.txtTotalKredit.SelectedText = "";
+            this.txtTotalKredit.Size = new System.Drawing.Size(187, 28);
+            this.txtTotalKredit.TabIndex = 42;
+            this.txtTotalKredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotalKredit.TextChanged += new System.EventHandler(this.txtTotalKredit_TextChanged);
             // 
             // btnHapus
             // 
@@ -314,6 +280,7 @@
             this.btnHapus.TabIndex = 31;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnTambah
             // 
@@ -347,6 +314,7 @@
             this.btnTambah.TabIndex = 33;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // btnUbah
             // 
@@ -380,14 +348,100 @@
             this.btnUbah.TabIndex = 32;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel5.Location = new System.Drawing.Point(701, 56);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(35, 19);
+            this.gunaLabel5.TabIndex = 43;
+            this.gunaLabel5.Text = ": Rp";
+            // 
+            // gunaLabel6
+            // 
+            this.gunaLabel6.AutoSize = true;
+            this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel6.Location = new System.Drawing.Point(701, 21);
+            this.gunaLabel6.Name = "gunaLabel6";
+            this.gunaLabel6.Size = new System.Drawing.Size(35, 19);
+            this.gunaLabel6.TabIndex = 44;
+            this.gunaLabel6.Text = ": Rp";
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 80;
+            this.No.Name = "No";
+            this.No.Width = 80;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // Nama
+            // 
+            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nama.HeaderText = "Nama Item";
+            this.Nama.MinimumWidth = 250;
+            this.Nama.Name = "Nama";
+            this.Nama.Width = 250;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Gender.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Gender.HeaderText = "Debit";
+            this.Gender.MinimumWidth = 100;
+            this.Gender.Name = "Gender";
+            // 
+            // Tempat
+            // 
+            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Tempat.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Tempat.HeaderText = "Kredit";
+            this.Tempat.MinimumWidth = 100;
+            this.Tempat.Name = "Tempat";
+            // 
+            // Hak
+            // 
+            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Hak.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Hak.HeaderText = "Saldo";
+            this.Hak.MinimumWidth = 100;
+            this.Hak.Name = "Hak";
+            // 
+            // Laba
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Laba.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Laba.HeaderText = "Laba";
+            this.Laba.MinimumWidth = 100;
+            this.Laba.Name = "Laba";
+            // 
+            // Keterangan
+            // 
+            this.Keterangan.HeaderText = "Keterangan";
+            this.Keterangan.MinimumWidth = 150;
+            this.Keterangan.Name = "Keterangan";
             // 
             // FrmPembukuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 664);
-            this.Controls.Add(this.gunaTextBox2);
-            this.Controls.Add(this.gunaTextBox1);
+            this.Controls.Add(this.gunaLabel5);
+            this.Controls.Add(this.gunaLabel6);
+            this.Controls.Add(this.txtTotalKredit);
+            this.Controls.Add(this.txtTotalDebit);
             this.Controls.Add(this.gunaLabel4);
             this.Controls.Add(this.gunaLabel3);
             this.Controls.Add(this.dtTanggal);
@@ -422,9 +476,12 @@
         private Guna.UI.WinForms.GunaDateTimePicker dtTanggal;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaTextBox txtTotalDebit;
+        private Guna.UI.WinForms.GunaTextBox txtTotalKredit;
+        private Guna.UI.WinForms.GunaLabel gunaLabel5;
+        private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nama;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tempat;

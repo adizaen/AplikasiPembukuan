@@ -152,6 +152,7 @@
             this.btnSimpan.TabIndex = 64;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // gunaPanel1
             // 
@@ -275,10 +276,13 @@
             this.Controls.Add(this.gunaLabel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmInputKaryawan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInputKaryawan";
+            this.Shown += new System.EventHandler(this.FrmInputKaryawan_Shown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmInputKaryawan_KeyPress);
             this.gunaPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
