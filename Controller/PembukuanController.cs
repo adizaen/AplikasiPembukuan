@@ -43,7 +43,7 @@ namespace AplikasiPembukuan.Controller
             return result;
         }
 
-        public int Update(Pembukuan buku)
+        public int Update(Pembukuan buku, Pembukuan buku1)
         {
             int result = 0;
 
@@ -68,7 +68,7 @@ namespace AplikasiPembukuan.Controller
             using (DbContext context = new DbContext())
             {
                 _repository = new PembukuanRepository(context);
-                result = _repository.Update(buku);
+                result = _repository.Update(buku, buku1);
             }
 
             if (result > 0)

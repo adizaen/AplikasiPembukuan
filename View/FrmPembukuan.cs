@@ -169,6 +169,21 @@ namespace AplikasiPembukuan
         private void dtTanggal_ValueChanged(object sender, EventArgs e)
         {
             TampilData();
+
+            dtTanggal.Format = DateTimePickerFormat.Custom;
+            dtTanggal.CustomFormat = "yyyy-MM-dd";
+
+            var today = DateTime.Today;
+
+            if (dtTanggal.Value > today || dtTanggal.Value < today)
+            {
+                var pesan = MessageBox.Show("Anda melewatkan hari ini. Hari ini tanggal " + DateTime.Today.ToLongDateString() +
+                                    "\nApakah ingin kembali ke hari ini?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (pesan == DialogResult.Yes)
+                    dtTanggal.Value = DateTime.Today;
+            }
+
         }
 
         private void txtTotalKredit_TextChanged(object sender, EventArgs e)
@@ -187,6 +202,11 @@ namespace AplikasiPembukuan
                 var validasi = new GeneralSetting();
                 validasi.SetThousandSeparator((GunaTextBox)sender);
             }
+        }
+
+        private void FrmPembukuan_Shown(object sender, EventArgs e)
+        {
+            dtTanggal.Value = DateTime.Today;
         }
     }
 }

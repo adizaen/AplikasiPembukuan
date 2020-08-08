@@ -47,12 +47,14 @@ namespace AplikasiPembukuan.Model.Repository
             return result;
         }
 
-        public int Update(Pembukuan buku)
+        public int Update(Pembukuan buku, Pembukuan buku1)
         {
-            int result = 0;
+            int result = 0, result1 = 0;
+            string tanggal = buku1.Tanggal.ToString("yyyyMMdd");
 
             string sql = @"UPDATE Pembukuan SET Tanggal = @Tanggal, Item = @Item, Debit = @Debit, Kredit = @Kredit,
                             Saldo = @Saldo, Laba = @Laba, Keterangan = @Keterangan WHERE ID = @ID";
+            string sql1 = @"CALL UpdateSaldo(@Tanggal, @ID, @Saldo, @Kredit, @Debit)";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
             {
@@ -68,6 +70,24 @@ namespace AplikasiPembukuan.Model.Repository
                 try
                 {
                     result = cmd.ExecuteNonQuery();
+
+                    using (MySqlCommand cmd1 = new MySqlCommand(sql1, _conn))
+                    {
+                        cmd1.Parameters.AddWithValue("@Tanggal", tanggal);
+                        cmd1.Parameters.AddWithValue("@ID", buku1.ID);
+                        cmd1.Parameters.AddWithValue("@Saldo", buku1.Saldo);
+                        cmd1.Parameters.AddWithValue("@Kredit", buku1.Kredit);
+                        cmd1.Parameters.AddWithValue("@Debit", buku1.Debit);
+
+                        try
+                        {
+                            result1 = cmd1.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.Print("Update saldo error: {0}", ex.Message);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -118,10 +138,7 @@ namespace AplikasiPembukuan.Model.Repository
                 }
             }
 
-            if (result > 0 && result1 > 0)
-                return result;
-            else
-                return 0;
+            return result1;
         }
 
         public List<Pembukuan> ReadAll()

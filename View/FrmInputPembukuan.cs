@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using AplikasiPembukuan.Controller;
 using AplikasiPembukuan.Model.Entity;
+using Guna.UI.WinForms;
 
 namespace AplikasiPembukuan.View
 {
@@ -23,6 +24,7 @@ namespace AplikasiPembukuan.View
         private DateTime tanggal;
         private string ID;
         private Pembukuan bukuAwal;
+        private Pembukuan selisihBuku;
 
         public FrmInputPembukuan()
         {
@@ -34,6 +36,7 @@ namespace AplikasiPembukuan.View
             lblHeader.Text = title;
             this.controller = controller;
             this.tanggal = tanggal;
+            selisihBuku = new Pembukuan();
         }
 
         public FrmInputPembukuan(string title, Pembukuan obj, PembukuanController controller, DateTime tanggal) : this()
@@ -49,6 +52,8 @@ namespace AplikasiPembukuan.View
             bukuAwal.Debit = buku.Debit;
             bukuAwal.Kredit = buku.Kredit;
             bukuAwal.Saldo = buku.Saldo;
+
+            selisihBuku = new Pembukuan();
 
             this.ID = buku.ID;
             txtNamaItem.Text = buku.Item;
@@ -115,7 +120,7 @@ namespace AplikasiPembukuan.View
             else if (cmbJenisDana.SelectedIndex == 1)
             {
                 buku.Kredit = double.Parse(txtNominalDana.Text);
-                
+
                 if (bukuAwal.Kredit > buku.Kredit)
                 {
                     var selisih = bukuAwal.Kredit - buku.Kredit;
@@ -135,6 +140,12 @@ namespace AplikasiPembukuan.View
             
             buku.Keterangan = txtKeterangan.Text;
 
+            selisihBuku.Tanggal = buku.Tanggal;
+            selisihBuku.ID = buku.ID;
+            selisihBuku.Saldo = bukuAwal.Saldo - buku.Saldo;
+            selisihBuku.Debit = bukuAwal.Debit - buku.Debit;
+            selisihBuku.Kredit = bukuAwal.Kredit - buku.Kredit;
+
             int result = 0;
 
             if (isNewData)
@@ -148,11 +159,12 @@ namespace AplikasiPembukuan.View
                     var reset = new GeneralSetting();
                     reset.ClearTxt(this);
                     cmbJenisDana.SelectedIndex = -1;
+                    txtNamaItem.Focus();
                 }
             }
             else
             {
-                result = controller.Update(buku);
+                result = controller.Update(buku, selisihBuku);
 
                 if (result > 0)
                 {
@@ -185,6 +197,18 @@ namespace AplikasiPembukuan.View
         {
             var validasi = new GeneralSetting();
             e.Handled = validasi.NumericOnly(e);
+        }
+
+        private void txtNominalDana_TextChanged(object sender, EventArgs e)
+        {
+            var validasi = new GeneralSetting();
+            validasi.SetThousandSeparator((GunaTextBox)sender);
+        }
+
+        private void txtNominalLaba_TextChanged(object sender, EventArgs e)
+        {
+            var validasi = new GeneralSetting();
+            validasi.SetThousandSeparator((GunaTextBox)sender);
         }
     }
 }

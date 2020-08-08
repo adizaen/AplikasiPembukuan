@@ -200,6 +200,7 @@
             this.txtNominalDana.SelectedText = "";
             this.txtNominalDana.Size = new System.Drawing.Size(191, 30);
             this.txtNominalDana.TabIndex = 63;
+            this.txtNominalDana.TextChanged += new System.EventHandler(this.txtNominalDana_TextChanged);
             this.txtNominalDana.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNominalDana_KeyPress);
             // 
             // cmbJenisDana
@@ -251,6 +252,7 @@
             this.txtNominalLaba.SelectedText = "";
             this.txtNominalLaba.Size = new System.Drawing.Size(191, 30);
             this.txtNominalLaba.TabIndex = 63;
+            this.txtNominalLaba.TextChanged += new System.EventHandler(this.txtNominalLaba_TextChanged);
             this.txtNominalLaba.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNominalLaba_KeyPress);
             // 
             // gunaLabel6

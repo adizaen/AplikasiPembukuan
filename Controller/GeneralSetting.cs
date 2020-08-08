@@ -23,7 +23,7 @@ namespace AplikasiPembukuan.Controller
         // Fungsi untuk memisah angka ribuan pada textbox
         public void SetThousandSeparator(GunaTextBox txt)
         {
-            if (txt.TextLength > 0)
+            if (txt.Text.Length > 0)
             {
                 try
                 {
