@@ -103,7 +103,10 @@ namespace AplikasiPembukuan.View
 
         private void menuProfil_Click(object sender, EventArgs e)
         {
-            FrmProfile _frmProfil = new FrmProfile();
+            var kodeKaryawan = txtKodeUser.Text;
+            var hakAkses = txtHakAkses.Text;
+
+            FrmProfile _frmProfil = new FrmProfile(kodeKaryawan, hakAkses);
             this._frmProfil = _frmProfil;
 
             if (!OpenFormOnPanel(this._frmProfil))

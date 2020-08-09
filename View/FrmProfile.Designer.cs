@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.cboLihatPass = new Guna.UI.WinForms.GunaCheckBox();
+            this.btnSimpan = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.txtKonfirmasi = new Guna.UI.WinForms.GunaTextBox();
             this.txtPassBaru = new Guna.UI.WinForms.GunaTextBox();
             this.txtUserBaru = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.btnUbahProfile = new Guna.UI.WinForms.GunaButton();
+            this.btnSimpanProfile = new Guna.UI.WinForms.GunaButton();
             this.cboGender = new Guna.UI.WinForms.GunaComboBox();
             this.txtTelepon = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
@@ -44,15 +49,10 @@
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.txtKode = new Guna.UI.WinForms.GunaTextBox();
-            this.txtTempatLahir = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.btnSimpan = new Guna.UI.WinForms.GunaButton();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.btnUbahProfile = new Guna.UI.WinForms.GunaButton();
-            this.btnSimpanProfile = new Guna.UI.WinForms.GunaButton();
+            this.txtNama = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGroupBox3.SuspendLayout();
-            this.gunaGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
+            this.gunaGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,17 @@
             this.gunaGroupBox3.Text = "Update Akun";
             this.gunaGroupBox3.TextLocation = new System.Drawing.Point(10, 8);
             // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::AplikasiPembukuan.Properties.Resources.key;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(33, 63);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(138, 145);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 52;
+            this.gunaPictureBox2.TabStop = false;
+            // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
@@ -105,6 +116,34 @@
             this.cboLihatPass.Size = new System.Drawing.Size(121, 21);
             this.cboLihatPass.TabIndex = 36;
             this.cboLihatPass.Text = "Lihat Password";
+            this.cboLihatPass.CheckedChanged += new System.EventHandler(this.cboLihatPass_CheckedChanged);
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.AnimationHoverSpeed = 0.07F;
+            this.btnSimpan.AnimationSpeed = 0.03F;
+            this.btnSimpan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSimpan.BorderColor = System.Drawing.Color.Black;
+            this.btnSimpan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSimpan.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSimpan.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSimpan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSimpan.ForeColor = System.Drawing.Color.White;
+            this.btnSimpan.Image = global::AplikasiPembukuan.Properties.Resources.check;
+            this.btnSimpan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimpan.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSimpan.Location = new System.Drawing.Point(325, 241);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSimpan.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSimpan.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSimpan.OnHoverImage = null;
+            this.btnSimpan.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSimpan.Size = new System.Drawing.Size(94, 33);
+            this.btnSimpan.TabIndex = 35;
+            this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // gunaLabel3
             // 
@@ -195,7 +234,7 @@
             this.gunaGroupBox2.Controls.Add(this.gunaLabel8);
             this.gunaGroupBox2.Controls.Add(this.gunaLabel6);
             this.gunaGroupBox2.Controls.Add(this.txtKode);
-            this.gunaGroupBox2.Controls.Add(this.txtTempatLahir);
+            this.gunaGroupBox2.Controls.Add(this.txtNama);
             this.gunaGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGroupBox2.ForeColor = System.Drawing.Color.White;
             this.gunaGroupBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -205,6 +244,71 @@
             this.gunaGroupBox2.TabIndex = 3;
             this.gunaGroupBox2.Text = "Profile";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::AplikasiPembukuan.Properties.Resources.profile;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(33, 57);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(138, 145);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 51;
+            this.gunaPictureBox1.TabStop = false;
+            // 
+            // btnUbahProfile
+            // 
+            this.btnUbahProfile.AnimationHoverSpeed = 0.07F;
+            this.btnUbahProfile.AnimationSpeed = 0.03F;
+            this.btnUbahProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnUbahProfile.BorderColor = System.Drawing.Color.Black;
+            this.btnUbahProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUbahProfile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUbahProfile.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUbahProfile.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnUbahProfile.ForeColor = System.Drawing.Color.White;
+            this.btnUbahProfile.Image = global::AplikasiPembukuan.Properties.Resources.edit3;
+            this.btnUbahProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUbahProfile.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUbahProfile.Location = new System.Drawing.Point(425, 228);
+            this.btnUbahProfile.Name = "btnUbahProfile";
+            this.btnUbahProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnUbahProfile.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUbahProfile.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUbahProfile.OnHoverImage = null;
+            this.btnUbahProfile.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUbahProfile.Size = new System.Drawing.Size(94, 33);
+            this.btnUbahProfile.TabIndex = 36;
+            this.btnUbahProfile.Text = "Ubah";
+            this.btnUbahProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUbahProfile.Click += new System.EventHandler(this.btnUbahProfile_Click);
+            // 
+            // btnSimpanProfile
+            // 
+            this.btnSimpanProfile.AnimationHoverSpeed = 0.07F;
+            this.btnSimpanProfile.AnimationSpeed = 0.03F;
+            this.btnSimpanProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnSimpanProfile.BorderColor = System.Drawing.Color.Black;
+            this.btnSimpanProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSimpanProfile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSimpanProfile.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSimpanProfile.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSimpanProfile.ForeColor = System.Drawing.Color.White;
+            this.btnSimpanProfile.Image = global::AplikasiPembukuan.Properties.Resources.check;
+            this.btnSimpanProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimpanProfile.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSimpanProfile.Location = new System.Drawing.Point(325, 228);
+            this.btnSimpanProfile.Name = "btnSimpanProfile";
+            this.btnSimpanProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSimpanProfile.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSimpanProfile.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSimpanProfile.OnHoverImage = null;
+            this.btnSimpanProfile.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSimpanProfile.Size = new System.Drawing.Size(94, 33);
+            this.btnSimpanProfile.TabIndex = 36;
+            this.btnSimpanProfile.Text = "Simpan";
+            this.btnSimpanProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSimpanProfile.Click += new System.EventHandler(this.btnSimpanProfile_Click);
             // 
             // cboGender
             // 
@@ -305,123 +409,23 @@
             this.txtKode.Size = new System.Drawing.Size(148, 30);
             this.txtKode.TabIndex = 38;
             // 
-            // txtTempatLahir
+            // txtNama
             // 
-            this.txtTempatLahir.BaseColor = System.Drawing.Color.White;
-            this.txtTempatLahir.BorderColor = System.Drawing.Color.Silver;
-            this.txtTempatLahir.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTempatLahir.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTempatLahir.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtTempatLahir.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtTempatLahir.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtTempatLahir.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTempatLahir.ForeColor = System.Drawing.Color.Black;
-            this.txtTempatLahir.Location = new System.Drawing.Point(325, 93);
-            this.txtTempatLahir.Name = "txtTempatLahir";
-            this.txtTempatLahir.PasswordChar = '\0';
-            this.txtTempatLahir.SelectedText = "";
-            this.txtTempatLahir.Size = new System.Drawing.Size(370, 30);
-            this.txtTempatLahir.TabIndex = 36;
-            // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::AplikasiPembukuan.Properties.Resources.key;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(33, 63);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(138, 145);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox2.TabIndex = 52;
-            this.gunaPictureBox2.TabStop = false;
-            // 
-            // btnSimpan
-            // 
-            this.btnSimpan.AnimationHoverSpeed = 0.07F;
-            this.btnSimpan.AnimationSpeed = 0.03F;
-            this.btnSimpan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnSimpan.BorderColor = System.Drawing.Color.Black;
-            this.btnSimpan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSimpan.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSimpan.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSimpan.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSimpan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpan.Image = global::AplikasiPembukuan.Properties.Resources.check;
-            this.btnSimpan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSimpan.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSimpan.Location = new System.Drawing.Point(325, 241);
-            this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSimpan.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSimpan.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSimpan.OnHoverImage = null;
-            this.btnSimpan.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSimpan.Size = new System.Drawing.Size(94, 33);
-            this.btnSimpan.TabIndex = 35;
-            this.btnSimpan.Text = "Simpan";
-            this.btnSimpan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::AplikasiPembukuan.Properties.Resources.profile;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(33, 57);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(138, 145);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 51;
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // btnUbahProfile
-            // 
-            this.btnUbahProfile.AnimationHoverSpeed = 0.07F;
-            this.btnUbahProfile.AnimationSpeed = 0.03F;
-            this.btnUbahProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnUbahProfile.BorderColor = System.Drawing.Color.Black;
-            this.btnUbahProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUbahProfile.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUbahProfile.FocusedColor = System.Drawing.Color.Empty;
-            this.btnUbahProfile.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnUbahProfile.ForeColor = System.Drawing.Color.White;
-            this.btnUbahProfile.Image = global::AplikasiPembukuan.Properties.Resources.edit3;
-            this.btnUbahProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnUbahProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUbahProfile.Location = new System.Drawing.Point(425, 228);
-            this.btnUbahProfile.Name = "btnUbahProfile";
-            this.btnUbahProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnUbahProfile.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnUbahProfile.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnUbahProfile.OnHoverImage = null;
-            this.btnUbahProfile.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUbahProfile.Size = new System.Drawing.Size(94, 33);
-            this.btnUbahProfile.TabIndex = 36;
-            this.btnUbahProfile.Text = "Ubah";
-            this.btnUbahProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSimpanProfile
-            // 
-            this.btnSimpanProfile.AnimationHoverSpeed = 0.07F;
-            this.btnSimpanProfile.AnimationSpeed = 0.03F;
-            this.btnSimpanProfile.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnSimpanProfile.BorderColor = System.Drawing.Color.Black;
-            this.btnSimpanProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSimpanProfile.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSimpanProfile.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSimpanProfile.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSimpanProfile.ForeColor = System.Drawing.Color.White;
-            this.btnSimpanProfile.Image = global::AplikasiPembukuan.Properties.Resources.check;
-            this.btnSimpanProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSimpanProfile.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSimpanProfile.Location = new System.Drawing.Point(325, 228);
-            this.btnSimpanProfile.Name = "btnSimpanProfile";
-            this.btnSimpanProfile.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSimpanProfile.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSimpanProfile.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSimpanProfile.OnHoverImage = null;
-            this.btnSimpanProfile.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSimpanProfile.Size = new System.Drawing.Size(94, 33);
-            this.btnSimpanProfile.TabIndex = 36;
-            this.btnSimpanProfile.Text = "Simpan";
-            this.btnSimpanProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNama.BaseColor = System.Drawing.Color.White;
+            this.txtNama.BorderColor = System.Drawing.Color.Silver;
+            this.txtNama.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNama.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNama.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtNama.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtNama.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtNama.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtNama.ForeColor = System.Drawing.Color.Black;
+            this.txtNama.Location = new System.Drawing.Point(325, 93);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.PasswordChar = '\0';
+            this.txtNama.SelectedText = "";
+            this.txtNama.Size = new System.Drawing.Size(370, 30);
+            this.txtNama.TabIndex = 36;
             // 
             // FrmProfile
             // 
@@ -436,11 +440,12 @@
             this.Name = "FrmProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Akun Pengguna";
+            this.Shown += new System.EventHandler(this.FrmProfile_Shown);
             this.gunaGroupBox3.ResumeLayout(false);
             this.gunaGroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -467,7 +472,7 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaTextBox txtKode;
-        private Guna.UI.WinForms.GunaTextBox txtTempatLahir;
+        private Guna.UI.WinForms.GunaTextBox txtNama;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
     }
