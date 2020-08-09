@@ -36,6 +36,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHarian = new Guna.UI.WinForms.GunaDataGridView();
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tempat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Keterangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtTanggal = new Guna.UI.WinForms.GunaDateTimePicker();
             this.cmbBulan = new Guna.UI.WinForms.GunaComboBox();
             this.cmbTahun = new Guna.UI.WinForms.GunaComboBox();
@@ -46,19 +54,12 @@
             this.btnExcel = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvBulanan = new Guna.UI.WinForms.GunaDataGridView();
-            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tempat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Keterangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarian)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBulanan)).BeginInit();
@@ -130,6 +131,63 @@
             this.dgvHarian.ThemeStyle.RowsStyle.Height = 30;
             this.dgvHarian.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHarian.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 70;
+            this.No.Name = "No";
+            this.No.Width = 70;
+            // 
+            // Kode
+            // 
+            this.Kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Kode.HeaderText = "Tanggal";
+            this.Kode.MinimumWidth = 150;
+            this.Kode.Name = "Kode";
+            this.Kode.Width = 150;
+            // 
+            // Nama
+            // 
+            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nama.HeaderText = "Nama Item";
+            this.Nama.MinimumWidth = 220;
+            this.Nama.Name = "Nama";
+            this.Nama.Width = 220;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Gender.HeaderText = "Debit";
+            this.Gender.MinimumWidth = 100;
+            this.Gender.Name = "Gender";
+            // 
+            // Tempat
+            // 
+            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tempat.HeaderText = "Kredit";
+            this.Tempat.MinimumWidth = 100;
+            this.Tempat.Name = "Tempat";
+            // 
+            // Hak
+            // 
+            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Hak.HeaderText = "Saldo";
+            this.Hak.MinimumWidth = 100;
+            this.Hak.Name = "Hak";
+            // 
+            // Laba
+            // 
+            this.Laba.HeaderText = "Laba";
+            this.Laba.MinimumWidth = 100;
+            this.Laba.Name = "Laba";
+            // 
+            // Keterangan
+            // 
+            this.Keterangan.HeaderText = "Keterangan";
+            this.Keterangan.MinimumWidth = 200;
+            this.Keterangan.Name = "Keterangan";
             // 
             // dtTanggal
             // 
@@ -331,6 +389,7 @@
             this.btnExcel.TabIndex = 41;
             this.btnExcel.Text = "Export to Excel";
             this.btnExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnPDF
             // 
@@ -429,63 +488,6 @@
             this.dgvBulanan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBulanan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 70;
-            this.No.Name = "No";
-            this.No.Width = 70;
-            // 
-            // Kode
-            // 
-            this.Kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Kode.HeaderText = "Tanggal";
-            this.Kode.MinimumWidth = 150;
-            this.Kode.Name = "Kode";
-            this.Kode.Width = 150;
-            // 
-            // Nama
-            // 
-            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nama.HeaderText = "Nama Item";
-            this.Nama.MinimumWidth = 220;
-            this.Nama.Name = "Nama";
-            this.Nama.Width = 220;
-            // 
-            // Gender
-            // 
-            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Gender.HeaderText = "Debit";
-            this.Gender.MinimumWidth = 100;
-            this.Gender.Name = "Gender";
-            // 
-            // Tempat
-            // 
-            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tempat.HeaderText = "Kredit";
-            this.Tempat.MinimumWidth = 100;
-            this.Tempat.Name = "Tempat";
-            // 
-            // Hak
-            // 
-            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Hak.HeaderText = "Saldo";
-            this.Hak.MinimumWidth = 100;
-            this.Hak.Name = "Hak";
-            // 
-            // Laba
-            // 
-            this.Laba.HeaderText = "Laba";
-            this.Laba.MinimumWidth = 100;
-            this.Laba.Name = "Laba";
-            // 
-            // Keterangan
-            // 
-            this.Keterangan.HeaderText = "Keterangan";
-            this.Keterangan.MinimumWidth = 200;
-            this.Keterangan.Name = "Keterangan";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -576,5 +578,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

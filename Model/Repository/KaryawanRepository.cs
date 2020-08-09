@@ -5,7 +5,6 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using AplikasiPembukuan.Model.Context;
 using AplikasiPembukuan.Model.Entity;
-using Dapper;
 
 namespace AplikasiPembukuan.Model.Repository
 {

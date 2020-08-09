@@ -166,5 +166,64 @@ namespace AplikasiPembukuan.View
                 TampilDataByMonth(bulan, tahun);
             }
         }
+
+        private void SimpanExcel()
+        {
+            saveFileDialog1.InitialDirectory = "C:";
+            saveFileDialog1.Title = "Simpan File Excel";
+
+            if (rdoTanggal.Checked == true)
+                saveFileDialog1.FileName = "Laporan Harian " + dtTanggal.Value.ToString("dd MMMM yyyy");
+            else
+                saveFileDialog1.FileName = "Laporan Bulan " + cmbBulan.Text + " " + cmbTahun.Text;
+
+            saveFileDialog1.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 97-2003 Workbook (*.xls)|*.xls";
+
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+                ExcelApp.Application.Workbooks.Add(Type.Missing);
+
+                ExcelApp.Cells[1, 1] = "LAPORAN DATA PEMBUKUAN";
+                ExcelApp.Cells[2, 1] = "Periode : " + dtTanggal.Value.ToString("dd MMMM yyyy");
+
+                for (int i = 1; i < dgvHarian.Columns.Count + 1; i++)
+                {
+                    ExcelApp.Cells[4, i] = dgvHarian.Columns[i - 1].HeaderText;
+                }
+
+                for (int i = 0; i < dgvHarian.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvHarian.Columns.Count; j++)
+                    {
+                        ExcelApp.Cells[i + 5, j + 1] = dgvHarian.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                ExcelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog1.FileName.ToString());
+                ExcelApp.ActiveWorkbook.Saved = true;
+                ExcelApp.Quit();
+
+                MessageBox.Show("Data berhasil diexport!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            if (rdoTanggal.Checked == true)
+            {
+                if (dgvHarian.Rows.Count != 0)
+                    SimpanExcel();
+                else
+                    MessageBox.Show("Tidak ada record data pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (dgvBulanan.Rows.Count != 0)
+                    SimpanExcel();
+                else
+                    MessageBox.Show("Tidak ada record data pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
