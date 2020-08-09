@@ -40,16 +40,16 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pbLogo = new Guna.UI.WinForms.GunaPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaGroupBox3.SuspendLayout();
             this.groupBoxAkun.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
@@ -198,51 +198,39 @@
             this.gunaGroupBox1.Text = "Informasi Umum";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // label1
+            // gunaPictureBox2
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 377);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(602, 97);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Aplikasi ini digunakan untuk melakukan proses pembukuan aliran dana dalam sebuah " +
-    "Toko sehingaa memudahkan dalam proses pembukuan dan data yang disimpan dapat ber" +
-    "tahan lama dan mudah digunakan.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = global::AplikasiPembukuan.Properties.Resources.whatsapp1;
+            this.gunaPictureBox2.Location = new System.Drawing.Point(372, 568);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox2.TabIndex = 6;
+            this.gunaPictureBox2.TabStop = false;
             // 
-            // label2
+            // gunaPictureBox1
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(207)))), ((int)(((byte)(106)))));
-            this.label2.Location = new System.Drawing.Point(1, 289);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(602, 60);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "PEMBUKUAN APPS";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::AplikasiPembukuan.Properties.Resources.gmail;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(45, 568);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaPictureBox1.TabIndex = 6;
+            this.gunaPictureBox1.TabStop = false;
             // 
-            // label3
+            // label6
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(602, 36);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "SELAMAT DATANG DI APLIKASI DESKTOP";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1, 514);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(599, 41);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Hubungi Developer :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(109, 583);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(189, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "adizaenul2000@gmail.com";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -256,17 +244,62 @@
             this.label5.Text = "0877 2015 2907";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(109, 583);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "adizaenul2000@gmail.com";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(1, 514);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(599, 41);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Hubungi Developer :";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(1, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(602, 36);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "SELAMAT DATANG DI APLIKASI DESKTOP";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BaseColor = System.Drawing.Color.White;
+            this.pbLogo.Image = global::AplikasiPembukuan.Properties.Resources.iconfinder_contacts_1055082;
+            this.pbLogo.Location = new System.Drawing.Point(0, 70);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(602, 162);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 5;
+            this.pbLogo.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(0, 377);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(602, 97);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Aplikasi ini digunakan untuk melakukan proses pembukuan aliran dana dalam sebuah " +
+    "toko sehingga memudahkan dalam proses pembukuan dan data yang disimpan dapat ber" +
+    "tahan lama dan mudah digunakan.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(207)))), ((int)(((byte)(106)))));
+            this.label2.Location = new System.Drawing.Point(1, 289);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(602, 60);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "PEMBUKUAN APPS";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnLogout
             // 
@@ -303,39 +336,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = global::AplikasiPembukuan.Properties.Resources.whatsapp1;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(372, 568);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(45, 45);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox2.TabIndex = 6;
-            this.gunaPictureBox2.TabStop = false;
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::AplikasiPembukuan.Properties.Resources.gmail;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(45, 568);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(45, 45);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gunaPictureBox1.TabIndex = 6;
-            this.gunaPictureBox1.TabStop = false;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.BaseColor = System.Drawing.Color.White;
-            this.pbLogo.Image = global::AplikasiPembukuan.Properties.Resources.iconfinder_contacts_1055082;
-            this.pbLogo.Location = new System.Drawing.Point(0, 70);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(602, 162);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 5;
-            this.pbLogo.TabStop = false;
             // 
             // FrmDashboard
             // 

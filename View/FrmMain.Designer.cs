@@ -40,6 +40,7 @@
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.pbLogo = new Guna.UI.WinForms.GunaPictureBox();
+            this.menuDatabase = new Guna.UI.WinForms.GunaAdvenceButton();
             this.menuProfil = new Guna.UI.WinForms.GunaAdvenceButton();
             this.menuLaporan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.menuPembukuan = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -171,6 +172,7 @@
             this.gunaPanel1.Controls.Add(this.pbLogo);
             this.gunaPanel1.Controls.Add(this.lblNamaApps);
             this.gunaPanel1.Controls.Add(this.lblVersiApps);
+            this.gunaPanel1.Controls.Add(this.menuDatabase);
             this.gunaPanel1.Controls.Add(this.menuProfil);
             this.gunaPanel1.Controls.Add(this.menuLaporan);
             this.gunaPanel1.Controls.Add(this.menuPembukuan);
@@ -193,6 +195,40 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 2;
             this.pbLogo.TabStop = false;
+            // 
+            // menuDatabase
+            // 
+            this.menuDatabase.AnimationHoverSpeed = 0.07F;
+            this.menuDatabase.AnimationSpeed = 0.03F;
+            this.menuDatabase.BackColor = System.Drawing.Color.Transparent;
+            this.menuDatabase.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(45)))));
+            this.menuDatabase.BorderColor = System.Drawing.Color.Black;
+            this.menuDatabase.CheckedBaseColor = System.Drawing.Color.DimGray;
+            this.menuDatabase.CheckedBorderColor = System.Drawing.Color.Black;
+            this.menuDatabase.CheckedForeColor = System.Drawing.Color.White;
+            this.menuDatabase.CheckedImage = global::AplikasiPembukuan.Properties.Resources.database4;
+            this.menuDatabase.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.menuDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuDatabase.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.menuDatabase.FocusedColor = System.Drawing.Color.Empty;
+            this.menuDatabase.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuDatabase.ForeColor = System.Drawing.Color.White;
+            this.menuDatabase.Image = global::AplikasiPembukuan.Properties.Resources.database4;
+            this.menuDatabase.ImageSize = new System.Drawing.Size(20, 20);
+            this.menuDatabase.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.menuDatabase.Location = new System.Drawing.Point(0, 448);
+            this.menuDatabase.Name = "menuDatabase";
+            this.menuDatabase.OnHoverBaseColor = System.Drawing.Color.DimGray;
+            this.menuDatabase.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.menuDatabase.OnHoverForeColor = System.Drawing.Color.White;
+            this.menuDatabase.OnHoverImage = null;
+            this.menuDatabase.OnHoverLineColor = System.Drawing.Color.DimGray;
+            this.menuDatabase.OnPressedColor = System.Drawing.Color.Black;
+            this.menuDatabase.Size = new System.Drawing.Size(225, 51);
+            this.menuDatabase.TabIndex = 0;
+            this.menuDatabase.Text = "  Database";
+            this.menuDatabase.UseTransfarantBackground = true;
+            this.menuDatabase.Click += new System.EventHandler(this.menuProfil_Click);
             // 
             // menuProfil
             // 
@@ -408,5 +444,6 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         internal Guna.UI.WinForms.GunaAdvenceButton menuProfil;
+        internal Guna.UI.WinForms.GunaAdvenceButton menuDatabase;
     }
 }
