@@ -32,13 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLaporan));
-            this.dgv = new Guna.UI.WinForms.GunaDataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvHarian = new Guna.UI.WinForms.GunaDataGridView();
             this.dtTanggal = new Guna.UI.WinForms.GunaDateTimePicker();
             this.cmbBulan = new Guna.UI.WinForms.GunaComboBox();
             this.cmbTahun = new Guna.UI.WinForms.GunaComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoTanggal = new Guna.UI.WinForms.GunaRadioButton();
+            this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.rdoBulan = new Guna.UI.WinForms.GunaRadioButton();
+            this.rdoTanggal = new Guna.UI.WinForms.GunaRadioButton();
+            this.btnExcel = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.dgvBulanan = new Guna.UI.WinForms.GunaDataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,22 +54,25 @@
             this.Hak = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Laba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Keterangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnUbah = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarian)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBulanan)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv
+            // dgvHarian
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.BackgroundColor = System.Drawing.Color.White;
-            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHarian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHarian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHarian.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHarian.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvHarian.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvHarian.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,9 +80,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv.ColumnHeadersHeight = 30;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHarian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHarian.ColumnHeadersHeight = 30;
+            this.dgvHarian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
             this.Kode,
             this.Nama,
@@ -88,38 +98,38 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv.Location = new System.Drawing.Point(28, 111);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.RowTemplate.Height = 30;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(900, 490);
-            this.dgv.TabIndex = 30;
-            this.dgv.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgv.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgv.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgv.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgv.ThemeStyle.ReadOnly = false;
-            this.dgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgv.ThemeStyle.RowsStyle.Height = 30;
-            this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvHarian.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHarian.EnableHeadersVisualStyles = false;
+            this.dgvHarian.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvHarian.Location = new System.Drawing.Point(28, 111);
+            this.dgvHarian.Name = "dgvHarian";
+            this.dgvHarian.RowHeadersVisible = false;
+            this.dgvHarian.RowTemplate.Height = 30;
+            this.dgvHarian.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHarian.Size = new System.Drawing.Size(900, 186);
+            this.dgvHarian.TabIndex = 30;
+            this.dgvHarian.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvHarian.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvHarian.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvHarian.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvHarian.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvHarian.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvHarian.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvHarian.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvHarian.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvHarian.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvHarian.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvHarian.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvHarian.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvHarian.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvHarian.ThemeStyle.ReadOnly = false;
+            this.dgvHarian.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvHarian.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvHarian.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvHarian.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvHarian.ThemeStyle.RowsStyle.Height = 30;
+            this.dgvHarian.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvHarian.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // dtTanggal
             // 
@@ -229,153 +239,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter Berdasarkan";
             // 
-            // rdoTanggal
-            // 
-            this.rdoTanggal.BaseColor = System.Drawing.SystemColors.Control;
-            this.rdoTanggal.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rdoTanggal.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.rdoTanggal.FillColor = System.Drawing.Color.White;
-            this.rdoTanggal.Location = new System.Drawing.Point(21, 37);
-            this.rdoTanggal.Name = "rdoTanggal";
-            this.rdoTanggal.Size = new System.Drawing.Size(71, 20);
-            this.rdoTanggal.TabIndex = 39;
-            this.rdoTanggal.Text = "Tanggal";
-            // 
-            // rdoBulan
-            // 
-            this.rdoBulan.BaseColor = System.Drawing.SystemColors.Control;
-            this.rdoBulan.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rdoBulan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.rdoBulan.FillColor = System.Drawing.Color.White;
-            this.rdoBulan.Location = new System.Drawing.Point(334, 37);
-            this.rdoBulan.Name = "rdoBulan";
-            this.rdoBulan.Size = new System.Drawing.Size(100, 20);
-            this.rdoBulan.TabIndex = 39;
-            this.rdoBulan.Text = "Bulan / Tahun";
-            // 
-            // No
-            // 
-            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.No.HeaderText = "No";
-            this.No.MinimumWidth = 80;
-            this.No.Name = "No";
-            this.No.Width = 80;
-            // 
-            // Kode
-            // 
-            this.Kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Kode.HeaderText = "Tanggal";
-            this.Kode.MinimumWidth = 100;
-            this.Kode.Name = "Kode";
-            // 
-            // Nama
-            // 
-            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Nama.HeaderText = "Nama Item";
-            this.Nama.MinimumWidth = 250;
-            this.Nama.Name = "Nama";
-            this.Nama.Width = 250;
-            // 
-            // Gender
-            // 
-            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Gender.HeaderText = "Debit";
-            this.Gender.MinimumWidth = 100;
-            this.Gender.Name = "Gender";
-            // 
-            // Tempat
-            // 
-            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tempat.HeaderText = "Kredit";
-            this.Tempat.MinimumWidth = 100;
-            this.Tempat.Name = "Tempat";
-            this.Tempat.Width = 200;
-            // 
-            // Hak
-            // 
-            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Hak.HeaderText = "Saldo";
-            this.Hak.MinimumWidth = 100;
-            this.Hak.Name = "Hak";
-            // 
-            // Laba
-            // 
-            this.Laba.HeaderText = "Laba";
-            this.Laba.MinimumWidth = 100;
-            this.Laba.Name = "Laba";
-            // 
-            // Keterangan
-            // 
-            this.Keterangan.HeaderText = "Keterangan";
-            this.Keterangan.MinimumWidth = 200;
-            this.Keterangan.Name = "Keterangan";
-            // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(101)))), ((int)(((byte)(199)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = global::AplikasiPembukuan.Properties.Resources.excel2;
-            this.gunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(28, 616);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(134)))), ((int)(((byte)(235)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(137, 36);
-            this.gunaAdvenceButton1.TabIndex = 41;
-            this.gunaAdvenceButton1.Text = "Export to Excel";
-            this.gunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnUbah
-            // 
-            this.btnUbah.AnimationHoverSpeed = 0.07F;
-            this.btnUbah.AnimationSpeed = 0.03F;
-            this.btnUbah.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(101)))), ((int)(((byte)(199)))));
-            this.btnUbah.BorderColor = System.Drawing.Color.Black;
-            this.btnUbah.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnUbah.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnUbah.CheckedForeColor = System.Drawing.Color.White;
-            this.btnUbah.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnUbah.CheckedImage")));
-            this.btnUbah.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnUbah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUbah.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUbah.FocusedColor = System.Drawing.Color.Empty;
-            this.btnUbah.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnUbah.ForeColor = System.Drawing.Color.White;
-            this.btnUbah.Image = global::AplikasiPembukuan.Properties.Resources.pdf;
-            this.btnUbah.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnUbah.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUbah.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnUbah.Location = new System.Drawing.Point(175, 616);
-            this.btnUbah.Name = "btnUbah";
-            this.btnUbah.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
-            this.btnUbah.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnUbah.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnUbah.OnHoverImage = null;
-            this.btnUbah.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(134)))), ((int)(((byte)(235)))));
-            this.btnUbah.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUbah.Size = new System.Drawing.Size(137, 36);
-            this.btnUbah.TabIndex = 40;
-            this.btnUbah.Text = "Export to PDF";
-            this.btnUbah.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnTampilkan
             // 
             this.btnTampilkan.AnimationHoverSpeed = 0.07F;
@@ -408,15 +271,270 @@
             this.btnTampilkan.TabIndex = 40;
             this.btnTampilkan.Text = "Tampilkan";
             this.btnTampilkan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnTampilkan.Click += new System.EventHandler(this.btnTampilkan_Click);
+            // 
+            // rdoBulan
+            // 
+            this.rdoBulan.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoBulan.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoBulan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoBulan.FillColor = System.Drawing.Color.White;
+            this.rdoBulan.Location = new System.Drawing.Point(334, 37);
+            this.rdoBulan.Name = "rdoBulan";
+            this.rdoBulan.Size = new System.Drawing.Size(100, 20);
+            this.rdoBulan.TabIndex = 39;
+            this.rdoBulan.Text = "Bulan / Tahun";
+            this.rdoBulan.CheckedChanged += new System.EventHandler(this.rdoBulan_CheckedChanged);
+            // 
+            // rdoTanggal
+            // 
+            this.rdoTanggal.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoTanggal.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoTanggal.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoTanggal.FillColor = System.Drawing.Color.White;
+            this.rdoTanggal.Location = new System.Drawing.Point(21, 37);
+            this.rdoTanggal.Name = "rdoTanggal";
+            this.rdoTanggal.Size = new System.Drawing.Size(71, 20);
+            this.rdoTanggal.TabIndex = 39;
+            this.rdoTanggal.Text = "Tanggal";
+            this.rdoTanggal.CheckedChanged += new System.EventHandler(this.rdoTanggal_CheckedChanged);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.AnimationHoverSpeed = 0.07F;
+            this.btnExcel.AnimationSpeed = 0.03F;
+            this.btnExcel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(101)))), ((int)(((byte)(199)))));
+            this.btnExcel.BorderColor = System.Drawing.Color.Black;
+            this.btnExcel.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnExcel.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnExcel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnExcel.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnExcel.CheckedImage")));
+            this.btnExcel.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnExcel.FocusedColor = System.Drawing.Color.Empty;
+            this.btnExcel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.Image = global::AplikasiPembukuan.Properties.Resources.excel2;
+            this.btnExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnExcel.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnExcel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnExcel.Location = new System.Drawing.Point(28, 616);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
+            this.btnExcel.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnExcel.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnExcel.OnHoverImage = null;
+            this.btnExcel.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(134)))), ((int)(((byte)(235)))));
+            this.btnExcel.OnPressedColor = System.Drawing.Color.Black;
+            this.btnExcel.Size = new System.Drawing.Size(137, 36);
+            this.btnExcel.TabIndex = 41;
+            this.btnExcel.Text = "Export to Excel";
+            this.btnExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.AnimationHoverSpeed = 0.07F;
+            this.btnPDF.AnimationSpeed = 0.03F;
+            this.btnPDF.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(101)))), ((int)(((byte)(199)))));
+            this.btnPDF.BorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPDF.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPDF.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPDF.CheckedImage")));
+            this.btnPDF.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPDF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPDF.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPDF.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPDF.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPDF.ForeColor = System.Drawing.Color.White;
+            this.btnPDF.Image = global::AplikasiPembukuan.Properties.Resources.pdf;
+            this.btnPDF.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPDF.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPDF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPDF.Location = new System.Drawing.Point(175, 616);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
+            this.btnPDF.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPDF.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPDF.OnHoverImage = null;
+            this.btnPDF.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(134)))), ((int)(((byte)(235)))));
+            this.btnPDF.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPDF.Size = new System.Drawing.Size(137, 36);
+            this.btnPDF.TabIndex = 40;
+            this.btnPDF.Text = "Export to PDF";
+            this.btnPDF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgvBulanan
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvBulanan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBulanan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBulanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBulanan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBulanan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBulanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvBulanan.ColumnHeadersHeight = 30;
+            this.dgvBulanan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBulanan.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvBulanan.EnableHeadersVisualStyles = false;
+            this.dgvBulanan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBulanan.Location = new System.Drawing.Point(28, 320);
+            this.dgvBulanan.Name = "dgvBulanan";
+            this.dgvBulanan.RowHeadersVisible = false;
+            this.dgvBulanan.RowTemplate.Height = 30;
+            this.dgvBulanan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBulanan.Size = new System.Drawing.Size(900, 186);
+            this.dgvBulanan.TabIndex = 42;
+            this.dgvBulanan.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvBulanan.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBulanan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvBulanan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvBulanan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBulanan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvBulanan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvBulanan.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvBulanan.ThemeStyle.ReadOnly = false;
+            this.dgvBulanan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBulanan.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBulanan.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvBulanan.ThemeStyle.RowsStyle.Height = 30;
+            this.dgvBulanan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBulanan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // No
+            // 
+            this.No.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 70;
+            this.No.Name = "No";
+            this.No.Width = 70;
+            // 
+            // Kode
+            // 
+            this.Kode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Kode.HeaderText = "Tanggal";
+            this.Kode.MinimumWidth = 150;
+            this.Kode.Name = "Kode";
+            this.Kode.Width = 150;
+            // 
+            // Nama
+            // 
+            this.Nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Nama.HeaderText = "Nama Item";
+            this.Nama.MinimumWidth = 220;
+            this.Nama.Name = "Nama";
+            this.Nama.Width = 220;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Gender.HeaderText = "Debit";
+            this.Gender.MinimumWidth = 100;
+            this.Gender.Name = "Gender";
+            // 
+            // Tempat
+            // 
+            this.Tempat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tempat.HeaderText = "Kredit";
+            this.Tempat.MinimumWidth = 100;
+            this.Tempat.Name = "Tempat";
+            // 
+            // Hak
+            // 
+            this.Hak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Hak.HeaderText = "Saldo";
+            this.Hak.MinimumWidth = 100;
+            this.Hak.Name = "Hak";
+            // 
+            // Laba
+            // 
+            this.Laba.HeaderText = "Laba";
+            this.Laba.MinimumWidth = 100;
+            this.Laba.Name = "Laba";
+            // 
+            // Keterangan
+            // 
+            this.Keterangan.HeaderText = "Keterangan";
+            this.Keterangan.MinimumWidth = 200;
+            this.Keterangan.Name = "Keterangan";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 70;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Bulan";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 260;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 260;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Total Debit";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 180;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Total Kredit";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 180;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Saldo Akhir";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 180;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 180;
             // 
             // FrmLaporan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 664);
-            this.Controls.Add(this.gunaAdvenceButton1);
-            this.Controls.Add(this.btnUbah);
-            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.dgvBulanan);
+            this.Controls.Add(this.btnExcel);
+            this.Controls.Add(this.btnPDF);
+            this.Controls.Add(this.dgvHarian);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -424,15 +542,17 @@
             this.Name = "FrmLaporan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laporan";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.Shown += new System.EventHandler(this.FrmLaporan_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHarian)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBulanan)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaDataGridView dgv;
+        private Guna.UI.WinForms.GunaDataGridView dgvHarian;
         private Guna.UI.WinForms.GunaDateTimePicker dtTanggal;
         private Guna.UI.WinForms.GunaComboBox cmbBulan;
         private Guna.UI.WinForms.GunaComboBox cmbTahun;
@@ -440,8 +560,9 @@
         private Guna.UI.WinForms.GunaRadioButton rdoBulan;
         private Guna.UI.WinForms.GunaRadioButton rdoTanggal;
         private Guna.UI.WinForms.GunaAdvenceButton btnTampilkan;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
-        private Guna.UI.WinForms.GunaAdvenceButton btnUbah;
+        private Guna.UI.WinForms.GunaAdvenceButton btnExcel;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPDF;
+        private Guna.UI.WinForms.GunaDataGridView dgvBulanan;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nama;
@@ -450,5 +571,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Hak;
         private System.Windows.Forms.DataGridViewTextBoxColumn Laba;
         private System.Windows.Forms.DataGridViewTextBoxColumn Keterangan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

@@ -198,17 +198,5 @@ namespace AplikasiPembukuan.View
             var validasi = new GeneralSetting();
             e.Handled = validasi.NumericOnly(e);
         }
-
-        private void txtNominalDana_TextChanged(object sender, EventArgs e)
-        {
-            var validasi = new GeneralSetting();
-            validasi.SetThousandSeparator((GunaTextBox)sender);
-        }
-
-        private void txtNominalLaba_TextChanged(object sender, EventArgs e)
-        {
-            var validasi = new GeneralSetting();
-            validasi.SetThousandSeparator((GunaTextBox)sender);
-        }
     }
 }

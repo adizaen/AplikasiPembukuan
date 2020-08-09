@@ -221,18 +221,21 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByMonth(int bulan)
+        public List<Pembukuan> ReadByMonth(int bulan, int tahun)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             try
             {
-                string sql = @"SELECT SUM(Debit) AS totalDebit, SUM(Kredit) AS totalKredit, SUM(SALDO) AS totalSaldo
-                            FROM Pembukuan WHERE MONTH(Tanggal) = @Bulan";
+                string sql = @"SELECT CONCAT(NamaPanjangBulan(MONTH(Tanggal)), ' ', YEAR(Tanggal)) AS Bulan, 
+                            SUM(Debit) AS totalDebit, SUM(Kredit) AS totalKredit, (SELECT Saldo FROM Pembukuan 
+                            WHERE MONTH(Tanggal) = @Bulan AND YEAR(Tanggal) = @Tahun ORDER BY ID DESC LIMIT 1) AS saldoAkhir 
+                            FROM Pembukuan WHERE MONTH(Tanggal) = @Bulan AND YEAR(Tanggal) = @Tahun";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
                     cmd.Parameters.AddWithValue("@Bulan", bulan);
+                    cmd.Parameters.AddWithValue("@Tahun", tahun);
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {
@@ -240,9 +243,10 @@ namespace AplikasiPembukuan.Model.Repository
                         {
                             var buku = new Pembukuan();
 
+                            buku.Keterangan = dtr["Bulan"].ToString();  // Menyimpan bulan dan tahun
                             buku.Debit = double.Parse(dtr["totalDebit"].ToString());
                             buku.Kredit = double.Parse(dtr["totalKredit"].ToString());
-                            buku.Saldo = double.Parse(dtr["totalSaldo"].ToString());
+                            buku.Saldo = double.Parse(dtr["saldoAkhir"].ToString());
 
                             listOfBuku.Add(buku);
                         }
