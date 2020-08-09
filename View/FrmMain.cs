@@ -17,7 +17,6 @@ namespace AplikasiPembukuan.View
 
         List<Form> listOfForm;
         List<GunaAdvenceButton> listOfMenu;
-        private int hakAkses;
 
         public FrmMain()
         {
@@ -38,7 +37,11 @@ namespace AplikasiPembukuan.View
 
         private void menuDashboard_Click(object sender, EventArgs e)
         {
-            FrmDashboard _frmDashboard = new FrmDashboard();
+            var kode = txtKodeUser.Text;
+            var nama = txtNamaUser.Text;
+            var hakAkses = txtHakAkses.Text;
+
+            FrmDashboard _frmDashboard = new FrmDashboard(kode, nama, hakAkses);
             this._frmDashboard = _frmDashboard;
 
             if (!OpenFormOnPanel(this._frmDashboard))
@@ -60,7 +63,9 @@ namespace AplikasiPembukuan.View
 
         private void menuPembukuan_Click(object sender, EventArgs e)
         {
-            FrmPembukuan _frmPembukuan = new FrmPembukuan();
+            var karyawan = txtKodeUser.Text + " - " + txtNamaUser.Text;
+
+            FrmPembukuan _frmPembukuan = new FrmPembukuan(karyawan);
             this._frmPembukuan = _frmPembukuan;
 
             if (!OpenFormOnPanel(this._frmPembukuan))

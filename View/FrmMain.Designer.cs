@@ -32,7 +32,6 @@
             this.txtNamaUser = new System.Windows.Forms.TextBox();
             this.lblNamaApps = new Guna.UI.WinForms.GunaLabel();
             this.lblVersiApps = new Guna.UI.WinForms.GunaLabel();
-            this.txtJamLogin = new System.Windows.Forms.TextBox();
             this.btnMinimize = new Guna.UI.WinForms.GunaControlBox();
             this.lblHeader = new Guna.UI.WinForms.GunaLabel();
             this.btnExit = new Guna.UI.WinForms.GunaControlBox();
@@ -90,14 +89,6 @@
             this.lblVersiApps.Text = "version 1.0";
             this.lblVersiApps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtJamLogin
-            // 
-            this.txtJamLogin.Location = new System.Drawing.Point(18, 595);
-            this.txtJamLogin.Name = "txtJamLogin";
-            this.txtJamLogin.Size = new System.Drawing.Size(100, 25);
-            this.txtJamLogin.TabIndex = 0;
-            this.txtJamLogin.Visible = false;
-            // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -153,7 +144,6 @@
             // 
             // panelUtama
             // 
-            this.panelUtama.Controls.Add(this.txtJamLogin);
             this.panelUtama.Controls.Add(this.txtHakAkses);
             this.panelUtama.Controls.Add(this.txtKodeUser);
             this.panelUtama.Controls.Add(this.txtNamaUser);
@@ -406,7 +396,6 @@
         private Guna.UI.WinForms.GunaPictureBox pbLogo;
         private Guna.UI.WinForms.GunaLabel lblNamaApps;
         private Guna.UI.WinForms.GunaLabel lblVersiApps;
-        internal System.Windows.Forms.TextBox txtJamLogin;
         private Guna.UI.WinForms.GunaControlBox btnMinimize;
         private Guna.UI.WinForms.GunaLabel lblHeader;
         private Guna.UI.WinForms.GunaControlBox btnExit;

@@ -12,14 +12,14 @@ namespace AplikasiPembukuan.View
 {
     public partial class FrmDashboard : Form
     {
-        private int HakAkses;
+        private string HakAkses;
 
         public FrmDashboard()
         {
             InitializeComponent();
         }
 
-        public FrmDashboard(string kode, string nama, int hakAkses) : this()
+        public FrmDashboard(string kode, string nama, string hakAkses) : this()
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
             lblKodeUser.Text = kode;
@@ -28,11 +28,11 @@ namespace AplikasiPembukuan.View
 
             var lblPosisi = "";
 
-            if (hakAkses == 1)
+            if (hakAkses == "1")
             {
                 lblPosisi = "Admin";
             }
-            else if (hakAkses == 2)
+            else if (hakAkses == "2")
             {
                 lblPosisi = "Kasir";
             }

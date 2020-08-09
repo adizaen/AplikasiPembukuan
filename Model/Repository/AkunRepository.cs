@@ -100,8 +100,9 @@ namespace AplikasiPembukuan.Model.Repository
 
             try
             {
-                string sql = @"SELECT KodeKaryawan, Username, Password, HakAkses FROM Akun
-                            WHERE Username LIKE BINARY @Username AND Password LIKE BINARY @Password";
+                string sql = @"SELECT K.Nama, A.KodeKaryawan, A.Username, A.Password, A.HakAkses FROM Akun A
+                            JOIN Karyawan K ON A.KodeKaryawan = K.KodeKaryawan
+                            WHERE A.Username LIKE BINARY @Username AND A.Password LIKE BINARY @Password";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
@@ -112,8 +113,8 @@ namespace AplikasiPembukuan.Model.Repository
                     {
                         while (dtr.Read())
                         {
-                            akun.Username = dtr["Username"].ToString();
-                            akun.Password = dtr["Password"].ToString();
+                            akun.KodeKaryawan = dtr["KodeKaryawan"].ToString();
+                            akun.Username = dtr["Nama"].ToString();     // Menyimpan nama karyawan
                             akun.HakAkses = dtr["HakAkses"].ToString();
                         }
                     }

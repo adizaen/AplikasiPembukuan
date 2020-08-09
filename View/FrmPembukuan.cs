@@ -29,6 +29,11 @@ namespace AplikasiPembukuan
             TampilData();
         }
 
+        public FrmPembukuan(string karyawan) : this()
+        {
+            txtKaryawan.Text = karyawan;
+        }
+
         private void InisiasiDatagrid()
         {
             dgv.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

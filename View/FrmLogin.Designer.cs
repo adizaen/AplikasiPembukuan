@@ -82,6 +82,9 @@
             this.btnBatal.TabIndex = 9;
             this.btnBatal.Text = "Batal";
             this.btnBatal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
+            this.btnBatal.MouseLeave += new System.EventHandler(this.btnBatal_MouseLeave);
+            this.btnBatal.MouseHover += new System.EventHandler(this.btnBatal_MouseHover);
             // 
             // btnLogin
             // 
@@ -116,6 +119,7 @@
             this.btnLogin.TabIndex = 8;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -136,6 +140,7 @@
             this.txtPassword.Size = new System.Drawing.Size(282, 36);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUsername
             // 
@@ -155,6 +160,7 @@
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(282, 36);
             this.txtUsername.TabIndex = 7;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // gunaLabel1
             // 
@@ -181,10 +187,12 @@
             this.Controls.Add(this.gunaLabel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.Shown += new System.EventHandler(this.FrmLogin_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

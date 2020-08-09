@@ -104,5 +104,41 @@ namespace AplikasiPembukuan.Controller
 
             return result;
         }
+
+        public int LoginCek(Akun akun)
+        {
+            int result = 0;
+
+            if (string.IsNullOrEmpty(akun.Username))
+            {
+                MessageBox.Show("Username harus diisi !", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            if (string.IsNullOrEmpty(akun.Password))
+            {
+                MessageBox.Show("Password harus diisi !", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return 0;
+            }
+
+            result = 1;
+
+            return result;
+        }
+
+        public Akun IsValidAkses(Akun akunParameter)
+        {
+            var akun = new Akun();
+
+            using (DbContext context = new DbContext())
+            {
+                _repository = new AkunRepository(context);
+                akun = _repository.IsValidAccess(akunParameter);
+            }
+
+            return akun;
+        }
+
+        
     }
 }
