@@ -128,27 +128,27 @@ namespace AplikasiPembukuan.Controller
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByDate(DateTime tanggal)
+        public List<Pembukuan> ReadByDate(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             using (DbContext context = new DbContext())
             {
                 _repository = new PembukuanRepository(context);
-                listOfBuku = _repository.ReadByDate(tanggal);
+                listOfBuku = _repository.ReadByDate(tanggalAwal, tanggalAkhir);
             }
 
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByMonth(int bulan, int tahun)
+        public List<Pembukuan> ReadByMonth(int bulanAwal, int tahunAwal, int bulanAkhir, int tahunAkhir)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             using (DbContext context = new DbContext())
             {
                 _repository = new PembukuanRepository(context);
-                listOfBuku = _repository.ReadByMonth(bulan, tahun);
+                listOfBuku = _repository.ReadByMonth(bulanAwal, tahunAwal, bulanAkhir, tahunAkhir);
             }
 
             return listOfBuku;

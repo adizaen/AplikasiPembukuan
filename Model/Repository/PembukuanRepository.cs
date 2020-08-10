@@ -179,19 +179,22 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByDate(DateTime tanggal)
+        public List<Pembukuan> ReadByDate(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
-            var formatTanggal = tanggal.ToString("yyyy-MM-dd");
+            var formatTglAwal = tanggalAwal.ToString("yyyy-MM-dd");
+            var formatTglAkhir = tanggalAkhir.ToString("yyyy-MM-dd");
 
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             try
             {
-                string sql = @"SELECT*FROM Pembukuan WHERE Tanggal = @Tanggal";
+                string sql = @"SELECT*FROM Pembukuan WHERE Tanggal BETWEEN @TanggalAwal AND @TanggalAkhir
+                                ORDER BY Tanggal ASC";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@Tanggal", formatTanggal);
+                    cmd.Parameters.AddWithValue("@TanggalAwal", formatTglAwal);
+                    cmd.Parameters.AddWithValue("@TanggalAkhir", formatTglAkhir);
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {
@@ -221,7 +224,7 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByMonth(int bulan, int tahun)
+        public List<Pembukuan> ReadByMonth(int bulanAwal, int tahunAwal, int bulanAkhir, int tahunAkhir)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
@@ -229,13 +232,17 @@ namespace AplikasiPembukuan.Model.Repository
             {
                 string sql = @"SELECT CONCAT(NamaPanjangBulan(MONTH(Tanggal)), ' ', YEAR(Tanggal)) AS Bulan, 
                             SUM(Debit) AS totalDebit, SUM(Kredit) AS totalKredit, (SELECT Saldo FROM Pembukuan 
-                            WHERE MONTH(Tanggal) = @Bulan AND YEAR(Tanggal) = @Tahun ORDER BY ID DESC LIMIT 1) AS saldoAkhir 
-                            FROM Pembukuan WHERE MONTH(Tanggal) = @Bulan AND YEAR(Tanggal) = @Tahun";
+                            WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir) 
+                            ORDER BY ID DESC LIMIT 1) AS saldoAkhir 
+                            FROM Pembukuan WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir)
+                            ORDER BY Bulan ASC";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@Bulan", bulan);
-                    cmd.Parameters.AddWithValue("@Tahun", tahun);
+                    cmd.Parameters.AddWithValue("@BulanAwal", bulanAwal);
+                    cmd.Parameters.AddWithValue("@BulanAkhir", bulanAkhir);
+                    cmd.Parameters.AddWithValue("@TahunAwal", tahunAwal);
+                    cmd.Parameters.AddWithValue("@TahunAkhir", tahunAkhir);
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {

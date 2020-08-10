@@ -25,13 +25,16 @@ namespace AplikasiPembukuan.View
 
         private void FrmLaporan_Shown(object sender, EventArgs e)
         {
-            dgvHarian.Size = new Size(900, 490);
-            dgvBulanan.Size = new Size(900, 490);
-            dgvBulanan.Location = new Point(28, 111);
+            dgvHarian.Size = new Size(900, 388);
+            dgvBulanan.Size = new Size(900, 388);
+            dgvHarian.Location = new Point(28, 207);
+            dgvBulanan.Location = new Point(28, 207);
             dgvBulanan.Visible = false;
 
             rdoTanggal.Checked = true;
             rdoBulan.Checked = false;
+            rdoPeriodeTanggal.Checked = false;
+            rdoPeriodeBulan.Checked = false;
             rdoTanggal.Focus();
         }
 
@@ -69,12 +72,12 @@ namespace AplikasiPembukuan.View
             dgvBulanan.ReadOnly = true;
         }
 
-        private void TampilDataByDate(DateTime tanggal)
+        private void TampilDataByDate(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
             int noUrut = 0;
 
             dgvHarian.Rows.Clear();
-            listOfBuku = controller.ReadByDate(tanggal);
+            listOfBuku = controller.ReadByDate(tanggalAwal, tanggalAkhir);
 
             if (listOfBuku.Count != 0)
             {
@@ -88,17 +91,16 @@ namespace AplikasiPembukuan.View
             }
             else
             {
-                MessageBox.Show("Tidak ada record data pembukuan pada tanggal " + dtTanggal.Value.ToString("dd MMMM yyyy"),
-                                "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Tidak ada record data pembukuan",  "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
-        private void TampilDataByMonth(int bulan, int tahun)
+        private void TampilDataByMonth(int bulanAwal, int tahunAwal, int bulanAkhir, int tahunAkhir)
         {
             int noUrut = 0;
 
             dgvBulanan.Rows.Clear();
-            listOfBuku = controller.ReadByMonth(bulan, tahun);
+            listOfBuku = controller.ReadByMonth(bulanAwal, tahunAwal, bulanAkhir, tahunAkhir);
 
             if (listOfBuku.Count != 0)
             {
@@ -111,8 +113,7 @@ namespace AplikasiPembukuan.View
             }
             else
             {
-                MessageBox.Show("Tidak ada record data pembukuan pada bulan " + cmbBulan.Text + " " + cmbTahun.Text,
-                                "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Tidak ada record data pembukuan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -146,6 +147,52 @@ namespace AplikasiPembukuan.View
             }
         }
 
+        private void rdoPeriodeTanggal_CheckedChanged(object sender, EventArgs e)
+        {
+            dtTanggalMulai.Value = DateTime.Today;
+            dtTanggalAkhir.Value = DateTime.Today;
+
+            if (rdoPeriodeTanggal.Checked == true)
+            {
+                dtTanggalMulai.Enabled = true;
+                dtTanggalAkhir.Enabled = true;
+            }
+            else
+            {
+                dtTanggalMulai.Enabled = false;
+                dtTanggalAkhir.Enabled = false;
+            }
+        }
+
+        private void rdoPeriodeBulan_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoPeriodeBulan.Checked == true)
+            {
+                cmbBulanAwal.Enabled = true;
+                cmbBulanAkhir.Enabled = true;
+                cmbTahunAwal.Enabled = true;
+                cmbTahunAkhir.Enabled = true;
+
+                var namaBulan = new GeneralSetting();
+                cmbBulanAwal.Text = namaBulan.GetBulanIndonesia(DateTime.Today.Month);
+                cmbTahunAwal.Text = DateTime.Today.Year.ToString();
+                cmbBulanAkhir.Text = namaBulan.GetBulanIndonesia(DateTime.Today.Month);
+                cmbTahunAkhir.Text = DateTime.Today.Year.ToString();
+            }
+            else
+            {
+                cmbBulanAwal.Enabled =false;
+                cmbBulanAkhir.Enabled = false;
+                cmbTahunAwal.Enabled = false;
+                cmbTahunAkhir.Enabled = false;
+
+                cmbBulanAwal.SelectedIndex = -1;
+                cmbTahunAwal.SelectedIndex = -1;
+                cmbBulanAkhir.SelectedIndex = -1;
+                cmbTahunAkhir.SelectedIndex = -1;
+            }
+        }
+
         private void btnTampilkan_Click(object sender, EventArgs e)
         {
             if (rdoTanggal.Checked == true)
@@ -154,16 +201,57 @@ namespace AplikasiPembukuan.View
                 dgvBulanan.Visible = false;
 
                 var tanggal = dtTanggal.Value;
-                TampilDataByDate(tanggal);
+                TampilDataByDate(tanggal, tanggal);
             }
-            else
+            else if (rdoBulan.Checked == true)
             {
                 dgvHarian.Visible = false;
                 dgvBulanan.Visible = true;
 
                 var bulan = cmbBulan.SelectedIndex + 1;
                 var tahun = int.Parse(cmbTahun.Text);
-                TampilDataByMonth(bulan, tahun);
+                TampilDataByMonth(bulan, tahun, bulan, tahun);
+            }
+            else if (rdoPeriodeTanggal.Checked == true)
+            {
+                dgvHarian.Visible = true;
+                dgvBulanan.Visible = false;
+
+                var tanggalAwal = dtTanggalMulai.Value;
+                var tanggalAkhir = dtTanggalAkhir.Value;
+
+                if (tanggalAwal < tanggalAkhir)
+                    TampilDataByDate(tanggalAwal, tanggalAkhir);
+                else
+                    MessageBox.Show("Tanggal awal tidak boleh melebihi tanggal akhir!", "Peringatan",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (rdoPeriodeBulan.Checked == true)
+            {
+                dgvHarian.Visible = false;
+                dgvBulanan.Visible = true;
+
+                var bulanAwal = cmbBulanAwal.SelectedIndex + 1;
+                var tahunAwal = int.Parse(cmbTahunAwal.Text);
+                var bulanAkhir = cmbBulanAkhir.SelectedIndex + 1;
+                var tahunAkhir = int.Parse(cmbTahunAkhir.Text);
+
+                if (tahunAwal == tahunAkhir)
+                {
+                    if (bulanAwal < bulanAkhir)
+                        TampilDataByMonth(bulanAwal, tahunAwal, bulanAkhir, tahunAkhir);
+                    else
+                        MessageBox.Show("Bulan awal tidak boleh melebihi bulan akhir!", "Peringatan",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    if (tahunAwal < tahunAkhir)
+                        TampilDataByMonth(bulanAwal, tahunAwal, bulanAkhir, tahunAkhir);
+                    else
+                        MessageBox.Show("Tahun awal tidak boleh melebihi tahun akhir!", "Peringatan",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -174,8 +262,12 @@ namespace AplikasiPembukuan.View
 
             if (rdoTanggal.Checked == true)
                 saveFileDialog1.FileName = "Laporan Harian " + dtTanggal.Value.ToString("dd MMMM yyyy");
-            else
+            else if (rdoBulan.Checked == true)
                 saveFileDialog1.FileName = "Laporan Bulan " + cmbBulan.Text + " " + cmbTahun.Text;
+            else if (rdoPeriodeTanggal.Checked == true)
+                saveFileDialog1.FileName = "Laporan Periode Harian " + dtTanggalMulai.Value.ToString("dd MMMM yyyy") + " - " + dtTanggalAkhir.Value.ToString("dd MMMM yyyy");
+            else
+                saveFileDialog1.FileName = "Laporan Periode Bulan " + cmbBulanAwal.Text + " " + cmbTahunAwal.Text + " - " + cmbBulanAkhir.Text + " " + cmbTahunAkhir.Text;
 
             saveFileDialog1.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 97-2003 Workbook (*.xls)|*.xls";
 
@@ -210,7 +302,7 @@ namespace AplikasiPembukuan.View
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            if (rdoTanggal.Checked == true)
+            if (rdoTanggal.Checked == true || rdoPeriodeTanggal.Checked == true)
             {
                 if (dgvHarian.Rows.Count != 0)
                     SimpanExcel();

@@ -64,7 +64,7 @@ namespace AplikasiPembukuan
 
             dgv.Rows.Clear();
             var tanggal = dtTanggal.Value;
-            listOfBuku = controller.ReadByDate(tanggal);
+            listOfBuku = controller.ReadByDate(tanggal, tanggal);
 
             foreach (var buku in listOfBuku)
             {

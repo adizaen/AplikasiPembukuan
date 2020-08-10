@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLaporan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHarian = new Guna.UI.WinForms.GunaDataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +48,19 @@
             this.cmbBulan = new Guna.UI.WinForms.GunaComboBox();
             this.cmbTahun = new Guna.UI.WinForms.GunaComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.rdoBulan = new Guna.UI.WinForms.GunaRadioButton();
+            this.rdoPeriodeBulan = new Guna.UI.WinForms.GunaRadioButton();
+            this.rdoPeriodeTanggal = new Guna.UI.WinForms.GunaRadioButton();
             this.rdoTanggal = new Guna.UI.WinForms.GunaRadioButton();
+            this.dtTanggalAkhir = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtTanggalMulai = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.cmbBulanAkhir = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbTahunAkhir = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbBulanAwal = new Guna.UI.WinForms.GunaComboBox();
+            this.cmbTahunAwal = new Guna.UI.WinForms.GunaComboBox();
+            this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnExcel = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvBulanan = new Guna.UI.WinForms.GunaDataGridView();
@@ -67,21 +77,21 @@
             // 
             // dgvHarian
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvHarian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dgvHarian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvHarian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHarian.BackgroundColor = System.Drawing.Color.White;
             this.dgvHarian.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHarian.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHarian.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHarian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHarian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvHarian.ColumnHeadersHeight = 30;
             this.dgvHarian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -92,22 +102,22 @@
             this.Hak,
             this.Laba,
             this.Keterangan});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHarian.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHarian.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvHarian.EnableHeadersVisualStyles = false;
             this.dgvHarian.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHarian.Location = new System.Drawing.Point(28, 111);
+            this.dgvHarian.Location = new System.Drawing.Point(28, 207);
             this.dgvHarian.Name = "dgvHarian";
             this.dgvHarian.RowHeadersVisible = false;
             this.dgvHarian.RowTemplate.Height = 30;
             this.dgvHarian.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHarian.Size = new System.Drawing.Size(900, 186);
+            this.dgvHarian.Size = new System.Drawing.Size(900, 173);
             this.dgvHarian.TabIndex = 30;
             this.dgvHarian.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dgvHarian.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -198,7 +208,7 @@
             this.dtTanggal.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtTanggal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtTanggal.ForeColor = System.Drawing.Color.Black;
-            this.dtTanggal.Location = new System.Drawing.Point(105, 32);
+            this.dtTanggal.Location = new System.Drawing.Point(123, 23);
             this.dtTanggal.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtTanggal.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtTanggal.Name = "dtTanggal";
@@ -219,7 +229,7 @@
             this.cmbBulan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbBulan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBulan.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbBulan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbBulan.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cmbBulan.ForeColor = System.Drawing.Color.Black;
             this.cmbBulan.FormattingEnabled = true;
             this.cmbBulan.Items.AddRange(new object[] {
@@ -235,11 +245,11 @@
             "Oktober",
             "November",
             "Desember"});
-            this.cmbBulan.Location = new System.Drawing.Point(452, 33);
+            this.cmbBulan.Location = new System.Drawing.Point(548, 25);
             this.cmbBulan.Name = "cmbBulan";
             this.cmbBulan.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmbBulan.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbBulan.Size = new System.Drawing.Size(184, 26);
+            this.cmbBulan.Size = new System.Drawing.Size(184, 28);
             this.cmbBulan.TabIndex = 37;
             // 
             // cmbTahun
@@ -250,7 +260,7 @@
             this.cmbTahun.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbTahun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTahun.FocusedColor = System.Drawing.Color.Empty;
-            this.cmbTahun.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbTahun.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.cmbTahun.ForeColor = System.Drawing.Color.Black;
             this.cmbTahun.FormattingEnabled = true;
             this.cmbTahun.Items.AddRange(new object[] {
@@ -275,27 +285,294 @@
             "2033",
             "2034",
             "2035"});
-            this.cmbTahun.Location = new System.Drawing.Point(642, 33);
+            this.cmbTahun.Location = new System.Drawing.Point(738, 25);
             this.cmbTahun.Name = "cmbTahun";
             this.cmbTahun.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.cmbTahun.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cmbTahun.Size = new System.Drawing.Size(87, 26);
+            this.cmbTahun.Size = new System.Drawing.Size(87, 28);
             this.cmbTahun.TabIndex = 37;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnTampilkan);
+            this.groupBox1.Controls.Add(this.gunaLabel2);
+            this.groupBox1.Controls.Add(this.gunaLabel1);
             this.groupBox1.Controls.Add(this.rdoBulan);
+            this.groupBox1.Controls.Add(this.rdoPeriodeBulan);
+            this.groupBox1.Controls.Add(this.rdoPeriodeTanggal);
             this.groupBox1.Controls.Add(this.rdoTanggal);
+            this.groupBox1.Controls.Add(this.dtTanggalAkhir);
+            this.groupBox1.Controls.Add(this.dtTanggalMulai);
             this.groupBox1.Controls.Add(this.dtTanggal);
+            this.groupBox1.Controls.Add(this.cmbBulanAkhir);
+            this.groupBox1.Controls.Add(this.cmbTahunAkhir);
+            this.groupBox1.Controls.Add(this.cmbBulanAwal);
+            this.groupBox1.Controls.Add(this.cmbTahunAwal);
             this.groupBox1.Controls.Add(this.cmbBulan);
             this.groupBox1.Controls.Add(this.cmbTahun);
             this.groupBox1.Location = new System.Drawing.Point(28, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(900, 80);
+            this.groupBox1.Size = new System.Drawing.Size(900, 141);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter Berdasarkan";
+            this.groupBox1.Text = "Filter";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaLabel2.Location = new System.Drawing.Point(831, 68);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(28, 19);
+            this.gunaLabel2.TabIndex = 41;
+            this.gunaLabel2.Text = "s/d";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaLabel1.Location = new System.Drawing.Point(313, 66);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(28, 19);
+            this.gunaLabel1.TabIndex = 41;
+            this.gunaLabel1.Text = "s/d";
+            // 
+            // rdoBulan
+            // 
+            this.rdoBulan.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoBulan.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoBulan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoBulan.FillColor = System.Drawing.Color.White;
+            this.rdoBulan.Location = new System.Drawing.Point(417, 28);
+            this.rdoBulan.Name = "rdoBulan";
+            this.rdoBulan.Size = new System.Drawing.Size(100, 20);
+            this.rdoBulan.TabIndex = 39;
+            this.rdoBulan.Text = "Bulan / Tahun";
+            this.rdoBulan.CheckedChanged += new System.EventHandler(this.rdoBulan_CheckedChanged);
+            // 
+            // rdoPeriodeBulan
+            // 
+            this.rdoPeriodeBulan.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoPeriodeBulan.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoPeriodeBulan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoPeriodeBulan.FillColor = System.Drawing.Color.White;
+            this.rdoPeriodeBulan.Location = new System.Drawing.Point(417, 64);
+            this.rdoPeriodeBulan.Name = "rdoPeriodeBulan";
+            this.rdoPeriodeBulan.Size = new System.Drawing.Size(69, 20);
+            this.rdoPeriodeBulan.TabIndex = 39;
+            this.rdoPeriodeBulan.Text = "Periode";
+            this.rdoPeriodeBulan.CheckedChanged += new System.EventHandler(this.rdoPeriodeBulan_CheckedChanged);
+            // 
+            // rdoPeriodeTanggal
+            // 
+            this.rdoPeriodeTanggal.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoPeriodeTanggal.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoPeriodeTanggal.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoPeriodeTanggal.FillColor = System.Drawing.Color.White;
+            this.rdoPeriodeTanggal.Location = new System.Drawing.Point(21, 64);
+            this.rdoPeriodeTanggal.Name = "rdoPeriodeTanggal";
+            this.rdoPeriodeTanggal.Size = new System.Drawing.Size(69, 20);
+            this.rdoPeriodeTanggal.TabIndex = 39;
+            this.rdoPeriodeTanggal.Text = "Periode";
+            this.rdoPeriodeTanggal.CheckedChanged += new System.EventHandler(this.rdoPeriodeTanggal_CheckedChanged);
+            // 
+            // rdoTanggal
+            // 
+            this.rdoTanggal.BaseColor = System.Drawing.SystemColors.Control;
+            this.rdoTanggal.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rdoTanggal.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.rdoTanggal.FillColor = System.Drawing.Color.White;
+            this.rdoTanggal.Location = new System.Drawing.Point(21, 28);
+            this.rdoTanggal.Name = "rdoTanggal";
+            this.rdoTanggal.Size = new System.Drawing.Size(71, 20);
+            this.rdoTanggal.TabIndex = 39;
+            this.rdoTanggal.Text = "Tanggal";
+            this.rdoTanggal.CheckedChanged += new System.EventHandler(this.rdoTanggal_CheckedChanged);
+            // 
+            // dtTanggalAkhir
+            // 
+            this.dtTanggalAkhir.BaseColor = System.Drawing.Color.White;
+            this.dtTanggalAkhir.BorderColor = System.Drawing.Color.Silver;
+            this.dtTanggalAkhir.CustomFormat = null;
+            this.dtTanggalAkhir.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtTanggalAkhir.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalAkhir.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtTanggalAkhir.ForeColor = System.Drawing.Color.Black;
+            this.dtTanggalAkhir.Location = new System.Drawing.Point(123, 97);
+            this.dtTanggalAkhir.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtTanggalAkhir.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtTanggalAkhir.Name = "dtTanggalAkhir";
+            this.dtTanggalAkhir.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtTanggalAkhir.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalAkhir.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalAkhir.OnPressedColor = System.Drawing.Color.Black;
+            this.dtTanggalAkhir.Size = new System.Drawing.Size(184, 30);
+            this.dtTanggalAkhir.TabIndex = 38;
+            this.dtTanggalAkhir.Text = "07 August 2020";
+            this.dtTanggalAkhir.Value = new System.DateTime(2020, 8, 7, 20, 46, 33, 522);
+            // 
+            // dtTanggalMulai
+            // 
+            this.dtTanggalMulai.BaseColor = System.Drawing.Color.White;
+            this.dtTanggalMulai.BorderColor = System.Drawing.Color.Silver;
+            this.dtTanggalMulai.CustomFormat = null;
+            this.dtTanggalMulai.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtTanggalMulai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalMulai.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtTanggalMulai.ForeColor = System.Drawing.Color.Black;
+            this.dtTanggalMulai.Location = new System.Drawing.Point(123, 61);
+            this.dtTanggalMulai.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtTanggalMulai.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtTanggalMulai.Name = "dtTanggalMulai";
+            this.dtTanggalMulai.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtTanggalMulai.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalMulai.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dtTanggalMulai.OnPressedColor = System.Drawing.Color.Black;
+            this.dtTanggalMulai.Size = new System.Drawing.Size(184, 30);
+            this.dtTanggalMulai.TabIndex = 38;
+            this.dtTanggalMulai.Text = "07 August 2020";
+            this.dtTanggalMulai.Value = new System.DateTime(2020, 8, 7, 20, 46, 33, 522);
+            // 
+            // cmbBulanAkhir
+            // 
+            this.cmbBulanAkhir.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBulanAkhir.BaseColor = System.Drawing.Color.White;
+            this.cmbBulanAkhir.BorderColor = System.Drawing.Color.Silver;
+            this.cmbBulanAkhir.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBulanAkhir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBulanAkhir.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbBulanAkhir.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cmbBulanAkhir.ForeColor = System.Drawing.Color.Black;
+            this.cmbBulanAkhir.FormattingEnabled = true;
+            this.cmbBulanAkhir.Items.AddRange(new object[] {
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"});
+            this.cmbBulanAkhir.Location = new System.Drawing.Point(548, 99);
+            this.cmbBulanAkhir.Name = "cmbBulanAkhir";
+            this.cmbBulanAkhir.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbBulanAkhir.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbBulanAkhir.Size = new System.Drawing.Size(184, 28);
+            this.cmbBulanAkhir.TabIndex = 37;
+            // 
+            // cmbTahunAkhir
+            // 
+            this.cmbTahunAkhir.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTahunAkhir.BaseColor = System.Drawing.Color.White;
+            this.cmbTahunAkhir.BorderColor = System.Drawing.Color.Silver;
+            this.cmbTahunAkhir.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTahunAkhir.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTahunAkhir.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbTahunAkhir.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cmbTahunAkhir.ForeColor = System.Drawing.Color.Black;
+            this.cmbTahunAkhir.FormattingEnabled = true;
+            this.cmbTahunAkhir.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035"});
+            this.cmbTahunAkhir.Location = new System.Drawing.Point(738, 99);
+            this.cmbTahunAkhir.Name = "cmbTahunAkhir";
+            this.cmbTahunAkhir.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbTahunAkhir.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbTahunAkhir.Size = new System.Drawing.Size(87, 28);
+            this.cmbTahunAkhir.TabIndex = 37;
+            // 
+            // cmbBulanAwal
+            // 
+            this.cmbBulanAwal.BackColor = System.Drawing.Color.Transparent;
+            this.cmbBulanAwal.BaseColor = System.Drawing.Color.White;
+            this.cmbBulanAwal.BorderColor = System.Drawing.Color.Silver;
+            this.cmbBulanAwal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbBulanAwal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBulanAwal.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbBulanAwal.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cmbBulanAwal.ForeColor = System.Drawing.Color.Black;
+            this.cmbBulanAwal.FormattingEnabled = true;
+            this.cmbBulanAwal.Items.AddRange(new object[] {
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember"});
+            this.cmbBulanAwal.Location = new System.Drawing.Point(548, 63);
+            this.cmbBulanAwal.Name = "cmbBulanAwal";
+            this.cmbBulanAwal.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbBulanAwal.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbBulanAwal.Size = new System.Drawing.Size(184, 28);
+            this.cmbBulanAwal.TabIndex = 37;
+            // 
+            // cmbTahunAwal
+            // 
+            this.cmbTahunAwal.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTahunAwal.BaseColor = System.Drawing.Color.White;
+            this.cmbTahunAwal.BorderColor = System.Drawing.Color.Silver;
+            this.cmbTahunAwal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTahunAwal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTahunAwal.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbTahunAwal.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.cmbTahunAwal.ForeColor = System.Drawing.Color.Black;
+            this.cmbTahunAwal.FormattingEnabled = true;
+            this.cmbTahunAwal.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2032",
+            "2033",
+            "2034",
+            "2035"});
+            this.cmbTahunAwal.Location = new System.Drawing.Point(738, 63);
+            this.cmbTahunAwal.Name = "cmbTahunAwal";
+            this.cmbTahunAwal.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cmbTahunAwal.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cmbTahunAwal.Size = new System.Drawing.Size(87, 28);
+            this.cmbTahunAwal.TabIndex = 37;
             // 
             // btnTampilkan
             // 
@@ -317,7 +594,7 @@
             this.btnTampilkan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnTampilkan.ImageSize = new System.Drawing.Size(20, 20);
             this.btnTampilkan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnTampilkan.Location = new System.Drawing.Point(748, 28);
+            this.btnTampilkan.Location = new System.Drawing.Point(28, 160);
             this.btnTampilkan.Name = "btnTampilkan";
             this.btnTampilkan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
             this.btnTampilkan.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -330,32 +607,6 @@
             this.btnTampilkan.Text = "Tampilkan";
             this.btnTampilkan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnTampilkan.Click += new System.EventHandler(this.btnTampilkan_Click);
-            // 
-            // rdoBulan
-            // 
-            this.rdoBulan.BaseColor = System.Drawing.SystemColors.Control;
-            this.rdoBulan.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rdoBulan.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.rdoBulan.FillColor = System.Drawing.Color.White;
-            this.rdoBulan.Location = new System.Drawing.Point(334, 37);
-            this.rdoBulan.Name = "rdoBulan";
-            this.rdoBulan.Size = new System.Drawing.Size(100, 20);
-            this.rdoBulan.TabIndex = 39;
-            this.rdoBulan.Text = "Bulan / Tahun";
-            this.rdoBulan.CheckedChanged += new System.EventHandler(this.rdoBulan_CheckedChanged);
-            // 
-            // rdoTanggal
-            // 
-            this.rdoTanggal.BaseColor = System.Drawing.SystemColors.Control;
-            this.rdoTanggal.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rdoTanggal.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.rdoTanggal.FillColor = System.Drawing.Color.White;
-            this.rdoTanggal.Location = new System.Drawing.Point(21, 37);
-            this.rdoTanggal.Name = "rdoTanggal";
-            this.rdoTanggal.Size = new System.Drawing.Size(71, 20);
-            this.rdoTanggal.TabIndex = 39;
-            this.rdoTanggal.Text = "Tanggal";
-            this.rdoTanggal.CheckedChanged += new System.EventHandler(this.rdoTanggal_CheckedChanged);
             // 
             // btnExcel
             // 
@@ -426,21 +677,21 @@
             // 
             // dgvBulanan
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvBulanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvBulanan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBulanan.BackgroundColor = System.Drawing.Color.White;
             this.dgvBulanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBulanan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBulanan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBulanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBulanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvBulanan.ColumnHeadersHeight = 30;
             this.dgvBulanan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -448,22 +699,22 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBulanan.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBulanan.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvBulanan.EnableHeadersVisualStyles = false;
             this.dgvBulanan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBulanan.Location = new System.Drawing.Point(28, 320);
+            this.dgvBulanan.Location = new System.Drawing.Point(28, 423);
             this.dgvBulanan.Name = "dgvBulanan";
             this.dgvBulanan.RowHeadersVisible = false;
             this.dgvBulanan.RowTemplate.Height = 30;
             this.dgvBulanan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBulanan.Size = new System.Drawing.Size(900, 186);
+            this.dgvBulanan.Size = new System.Drawing.Size(900, 121);
             this.dgvBulanan.TabIndex = 42;
             this.dgvBulanan.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dgvBulanan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -535,6 +786,7 @@
             this.ClientSize = new System.Drawing.Size(952, 664);
             this.Controls.Add(this.dgvBulanan);
             this.Controls.Add(this.btnExcel);
+            this.Controls.Add(this.btnTampilkan);
             this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dgvHarian);
             this.Controls.Add(this.groupBox1);
@@ -579,5 +831,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaRadioButton rdoPeriodeBulan;
+        private Guna.UI.WinForms.GunaRadioButton rdoPeriodeTanggal;
+        private Guna.UI.WinForms.GunaDateTimePicker dtTanggalAkhir;
+        private Guna.UI.WinForms.GunaDateTimePicker dtTanggalMulai;
+        private Guna.UI.WinForms.GunaComboBox cmbBulanAkhir;
+        private Guna.UI.WinForms.GunaComboBox cmbTahunAkhir;
+        private Guna.UI.WinForms.GunaComboBox cmbBulanAwal;
+        private Guna.UI.WinForms.GunaComboBox cmbTahunAwal;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
     }
 }
