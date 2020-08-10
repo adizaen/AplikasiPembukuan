@@ -228,7 +228,7 @@
             this.menuDatabase.TabIndex = 0;
             this.menuDatabase.Text = "  Database";
             this.menuDatabase.UseTransfarantBackground = true;
-            this.menuDatabase.Click += new System.EventHandler(this.menuProfil_Click);
+            this.menuDatabase.Click += new System.EventHandler(this.menuDatabase_Click);
             // 
             // menuProfil
             // 

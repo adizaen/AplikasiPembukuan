@@ -13,7 +13,7 @@ namespace AplikasiPembukuan.View
 {
     public partial class FrmMain : Form
     {
-        Form _frmDashboard, _frmKaryawan, _frmPembukuan, _frmLaporan, _frmProfil;
+        Form _frmDashboard, _frmKaryawan, _frmPembukuan, _frmLaporan, _frmProfil, _frmDatabase;
 
         List<Form> listOfForm;
         List<GunaAdvenceButton> listOfMenu;
@@ -33,6 +33,7 @@ namespace AplikasiPembukuan.View
             listOfMenu.Add(menuPembukuan);
             listOfMenu.Add(menuLaporan);
             listOfMenu.Add(menuProfil);
+            listOfMenu.Add(menuDatabase);
         }
 
         private void menuDashboard_Click(object sender, EventArgs e)
@@ -88,6 +89,17 @@ namespace AplikasiPembukuan.View
             {
                 Application.Exit();
             }
+        }
+
+        private void menuDatabase_Click(object sender, EventArgs e)
+        {
+            FrmDatabase _frmDatabase = new FrmDatabase();
+            this._frmDatabase = _frmDatabase;
+
+            if (!OpenFormOnPanel(this._frmDatabase))
+                listOfForm.Add(this._frmDatabase);
+
+            CheckedButtonMenu(menuDatabase);
         }
 
         private void menuLaporan_Click(object sender, EventArgs e)

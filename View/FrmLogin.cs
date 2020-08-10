@@ -84,6 +84,7 @@ namespace AplikasiPembukuan.View
                         fMenu.menuProfil.Location = new Point(fMenu.menuPembukuan.Left, fMenu.menuPembukuan.Top);
                         fMenu.menuPembukuan.Location = new Point(fMenu.menuKaryawan.Left, fMenu.menuKaryawan.Top);
                         fMenu.menuLaporan.Visible = false;
+                        fMenu.menuDatabase.Visible = false;
                     }
 
                     fMenu.Show();

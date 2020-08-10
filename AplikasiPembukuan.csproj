@@ -221,6 +221,9 @@
   <ItemGroup>
     <Content Include="book.ico" />
     <Content Include="Bookkeeping.ico" />
+    <None Include="Resources\important.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\restore.png" />
     <None Include="Resources\backup.png" />
     <None Include="Resources\database4.png" />
     <None Include="Resources\database3.png" />
