@@ -61,14 +61,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AkunController.cs" />
+    <Compile Include="Controller\DataController.cs" />
     <Compile Include="Controller\GeneralSetting.cs" />
     <Compile Include="Controller\KaryawanController.cs" />
     <Compile Include="Controller\PembukuanController.cs" />
     <Compile Include="Model\Context\DbContext.cs" />
     <Compile Include="Model\Entity\Akun.cs" />
+    <Compile Include="Model\Entity\Data.cs" />
     <Compile Include="Model\Entity\Karyawan.cs" />
     <Compile Include="Model\Entity\Pembukuan.cs" />
     <Compile Include="Model\Repository\AkunRepository.cs" />
+    <Compile Include="Model\Repository\DataRepository.cs" />
     <Compile Include="Model\Repository\KaryawanRepository.cs" />
     <Compile Include="Model\Repository\PembukuanRepository.cs" />
     <Compile Include="View\FrmDashboard.cs">

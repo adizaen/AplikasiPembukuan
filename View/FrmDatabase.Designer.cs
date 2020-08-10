@@ -55,6 +55,7 @@
             this.gunaPictureBox4 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.btnBackup = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.pesanDialog = new System.Windows.Forms.SaveFileDialog();
             this.gunaGroupBox2.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
@@ -158,12 +159,11 @@
             // 
             // lblLokasi
             // 
-            this.lblLokasi.AutoSize = true;
             this.lblLokasi.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblLokasi.ForeColor = System.Drawing.Color.Black;
             this.lblLokasi.Location = new System.Drawing.Point(167, 248);
             this.lblLokasi.Name = "lblLokasi";
-            this.lblLokasi.Size = new System.Drawing.Size(138, 19);
+            this.lblLokasi.Size = new System.Drawing.Size(227, 47);
             this.lblLokasi.TabIndex = 5;
             this.lblLokasi.Text = "C:/BackupDB/sql1.sql";
             // 
@@ -219,7 +219,7 @@
             // 
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gunaLabel8.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.gunaLabel8.Location = new System.Drawing.Point(105, 227);
+            this.gunaLabel8.Location = new System.Drawing.Point(105, 233);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(287, 46);
             this.gunaLabel8.TabIndex = 5;
@@ -329,7 +329,7 @@
             // 
             this.gunaPictureBox3.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox3.Image = global::AplikasiPembukuan.Properties.Resources.warning;
-            this.gunaPictureBox3.Location = new System.Drawing.Point(48, 224);
+            this.gunaPictureBox3.Location = new System.Drawing.Point(48, 230);
             this.gunaPictureBox3.Name = "gunaPictureBox3";
             this.gunaPictureBox3.Size = new System.Drawing.Size(51, 46);
             this.gunaPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -367,7 +367,7 @@
             this.btnRestore.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnRestore.ImageSize = new System.Drawing.Size(20, 20);
             this.btnRestore.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnRestore.Location = new System.Drawing.Point(144, 290);
+            this.btnRestore.Location = new System.Drawing.Point(144, 298);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
             this.btnRestore.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -422,7 +422,7 @@
             this.btnBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnBackup.ImageSize = new System.Drawing.Size(20, 20);
             this.btnBackup.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnBackup.Location = new System.Drawing.Point(144, 290);
+            this.btnBackup.Location = new System.Drawing.Point(144, 298);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
             this.btnBackup.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -490,5 +490,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox4;
+        private System.Windows.Forms.SaveFileDialog pesanDialog;
     }
 }
