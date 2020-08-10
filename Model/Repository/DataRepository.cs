@@ -21,7 +21,7 @@ namespace AplikasiPembukuan.Model.Repository
         {
             int result = 0;
 
-            string sql = @"INSERT INTO Data VALUES (@Tanggal, @Lokasi)";
+            string sql = @"INSERT INTO Data (Tanggal, Lokasi) VALUES (@Tanggal, @Lokasi)";
 
             using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
             {
@@ -68,6 +68,95 @@ namespace AplikasiPembukuan.Model.Repository
             }
 
             return data;
+        }
+
+        public int GetCountBackup()
+        {
+            int count = 0;
+
+            try
+            {
+                string sql = @"SELECT COUNT(*) AS count FROM Data";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    using (MySqlDataReader dtr = cmd.ExecuteReader())
+                    {
+                        while (dtr.Read())
+                        {
+                            count = int.Parse(dtr["count"].ToString()) + 1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("GetCountBackup error: {0}", ex.Message);
+            }
+
+            return count;
+        }
+
+        public int BackupDB(string filePath)
+        {
+            int result = 0;
+
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup backup = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = _conn;
+                        backup.ExportToFile(filePath);
+                        result = 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("BackupDB error: {0}", ex.Message);
+            }
+
+            return result;
+        }
+
+        public int RestoreDB(string filePath)
+        {
+            int result = 0, result1 = 0;
+
+            try
+            {
+                string sql = @"CALL DropTables()";
+
+                using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+                {
+                    try
+                    {
+                        result = cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.Print("Drop table error: {0}", ex.Message);
+                    }
+                }
+
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup backup = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = _conn;
+                        backup.ImportFromFile(filePath);
+                        result1 = 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("RestoreDB error: {0}", ex.Message);
+            }
+
+            return result1;
         }
     }
 }
