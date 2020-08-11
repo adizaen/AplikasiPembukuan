@@ -377,7 +377,7 @@ namespace AplikasiPembukuan.View
 
             // Currency Format
             Range range9 = ws1.get_Range("D5", "G" + (dgvHarian.Rows.Count + 5).ToString());
-            range9.NumberFormat = @"Rp #.##0;-Rp #.##0";
+            range9.NumberFormat = "Rp #,###,##0";
 
             Range range10 = ws1.get_Range("B5", "B" + rowCount);
             range10.NumberFormat = "[$-3809]dd mmmm yyyy";
@@ -395,7 +395,7 @@ namespace AplikasiPembukuan.View
                 Range range12 = ws1.get_Range("A" + countDgv, "C" + countDgv);
                 range12.Merge();
                 range12.Font.Bold = true;
-                range4.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                range12.HorizontalAlignment = XlHAlign.xlHAlignLeft;
 
                 ws1.Cells[dgvHarian.Rows.Count + 5, 1] = "TOTAL";
                 ws1.Cells[dgvHarian.Rows.Count + 5, 4].Formula = string.Format("=SUM(D5:D{0})", dgvHarian.Rows.Count + 4);
