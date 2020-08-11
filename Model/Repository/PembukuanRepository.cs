@@ -233,7 +233,7 @@ namespace AplikasiPembukuan.Model.Repository
                 string sql = @"SELECT CONCAT(NamaPanjangBulan(MONTH(Tanggal)), ' ', YEAR(Tanggal)) AS Bulan, 
                             SUM(Debit) AS totalDebit, SUM(Kredit) AS totalKredit, (SELECT Saldo FROM Pembukuan 
                             WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir) 
-                            ORDER BY ID DESC LIMIT 1) AS saldoAkhir 
+                            ORDER BY ID DESC LIMIT 1) AS saldoAkhir, SUM(Laba) AS totalLaba
                             FROM Pembukuan WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir)
                             ORDER BY Bulan ASC";
 
@@ -254,6 +254,7 @@ namespace AplikasiPembukuan.Model.Repository
                             buku.Debit = double.Parse(dtr["totalDebit"].ToString());
                             buku.Kredit = double.Parse(dtr["totalKredit"].ToString());
                             buku.Saldo = double.Parse(dtr["saldoAkhir"].ToString());
+                            buku.Laba = double.Parse(dtr["totalLaba"].ToString());
 
                             listOfBuku.Add(buku);
                         }

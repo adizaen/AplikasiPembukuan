@@ -55,6 +55,7 @@ namespace AplikasiPembukuan.View
             dgvBulanan.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBulanan.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvBulanan.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvBulanan.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvHarian.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvHarian.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, FontStyle.Bold);
@@ -109,7 +110,7 @@ namespace AplikasiPembukuan.View
                 {
                     noUrut = noUrut + 1;
 
-                    dgvBulanan.Rows.Add(noUrut.ToString(), buku.Keterangan, buku.Debit, buku.Kredit, buku.Saldo);
+                    dgvBulanan.Rows.Add(noUrut.ToString(), buku.Keterangan, buku.Debit, buku.Kredit, buku.Saldo, buku.Laba);
                 }
             }
             else
@@ -274,7 +275,10 @@ namespace AplikasiPembukuan.View
 
             if (pesanDialog.ShowDialog() != DialogResult.Cancel)
             {
-                ExportToExcel();
+                if (rdoTanggal.Checked == true || rdoPeriodeTanggal.Checked == true)
+                    ExportToExcelByTanggal();
+                else
+                    ExportToExcelByBulan();
             }
         }
 
@@ -296,7 +300,7 @@ namespace AplikasiPembukuan.View
             }
         }
 
-        private void ExportToExcel()
+        private void ExportToExcelByTanggal()
         {
 
             Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -404,6 +408,58 @@ namespace AplikasiPembukuan.View
                 ws1.Cells[dgvHarian.Rows.Count + 5, 7].Formula = string.Format("=SUM(G5:G{0})", dgvHarian.Rows.Count + 4);
             }
 
+
+            ExcelApp.ActiveWorkbook.SaveCopyAs(pesanDialog.FileName.ToString());
+            ExcelApp.ActiveWorkbook.Saved = true;
+            ExcelApp.Quit();
+
+            MessageBox.Show("Data berhasil diexport!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ExportToExcelByBulan()
+        {
+            Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+
+            Workbook wb1 = ExcelApp.Workbooks.Add(Type.Missing);
+            Worksheet ws1 = (Worksheet)wb1.Worksheets[1];
+
+
+            ws1.Cells[1, 1] = "LAPORAN DATA PEMBUKUAN";
+
+            if (rdoBulan.Checked == true)
+                ws1.Cells[2, 1] = "Periode Bulan : " + cmbBulan.Text + " " + cmbTahun.Text;
+            else if (rdoPeriodeBulan.Checked == true)
+                ws1.Cells[2, 1] = "Periode Bulan : " + cmbBulanAwal.Text + " " + cmbTahunAwal.Text + " - " +
+                                    cmbBulanAkhir.Text + " " + cmbTahunAkhir.Text;
+
+            for (int i = 1; i < dgvBulanan.Columns.Count + 1; i++)
+            {
+                ws1.Cells[4, i] = dgvBulanan.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvBulanan.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvBulanan.Columns.Count; j++)
+                {
+                    ws1.Cells[i + 5, j + 1] = dgvBulanan.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // Judul Laporan
+            Range range = ws1.get_Range("A1", "H1");
+            range.Font.Bold = true;
+            range.Font.Size = 12;
+            range.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            range.Merge();
+
+            // Tanggal Periode
+            Range range1 = ws1.get_Range("A2", "H2");
+            range1.Font.Bold = false;
+            range1.Font.Size = 12;
+            range1.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range1.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            range1.Merge();
 
             ExcelApp.ActiveWorkbook.SaveCopyAs(pesanDialog.FileName.ToString());
             ExcelApp.ActiveWorkbook.Saved = true;
