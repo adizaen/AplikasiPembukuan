@@ -446,7 +446,7 @@ namespace AplikasiPembukuan.View
             }
 
             // Judul Laporan
-            Range range = ws1.get_Range("A1", "H1");
+            Range range = ws1.get_Range("A1", "F1");
             range.Font.Bold = true;
             range.Font.Size = 12;
             range.VerticalAlignment = XlVAlign.xlVAlignCenter;
@@ -454,12 +454,46 @@ namespace AplikasiPembukuan.View
             range.Merge();
 
             // Tanggal Periode
-            Range range1 = ws1.get_Range("A2", "H2");
+            Range range1 = ws1.get_Range("A2", "F2");
             range1.Font.Bold = false;
             range1.Font.Size = 12;
             range1.VerticalAlignment = XlVAlign.xlVAlignCenter;
             range1.HorizontalAlignment = XlHAlign.xlHAlignCenter;
             range1.Merge();
+
+            // Data baris
+            var rowCount = (dgvBulanan.Rows.Count + 4).ToString();
+
+            Range range2 = ws1.get_Range("A4", "F" + rowCount);
+            range2.Borders.LineStyle = XlLineStyle.xlContinuous;
+            range2.Borders.Weight = XlBorderWeight.xlThin;
+            range2.Rows.RowHeight = 16.50;
+            range2.VerticalAlignment = XlVAlign.xlVAlignCenter;
+
+            // Nama Kolom
+            Range range3 = ws1.get_Range("A4", "F4");
+            range3.Font.Bold = true;
+            range3.Font.Size = 11;
+            range3.Rows.RowHeight = 21;
+            range3.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range3.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            // Set rata tengah kolom 1 dan 2
+            Range range4 = ws1.get_Range("A5", "B" + rowCount);
+            range4.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            Range range5 = ws1.get_Range("A4", "A4");
+            range5.ColumnWidth = 5.30;
+
+            Range range6 = ws1.get_Range("B4", "B4");
+            range6.ColumnWidth = 21;
+
+            Range range7 = ws1.get_Range("C4", "F4");
+            range7.ColumnWidth = 20;
+
+            // Currency Format
+            Range range9 = ws1.get_Range("C5", "F" + rowCount);
+            range9.NumberFormat = "Rp #,###,##0";
 
             ExcelApp.ActiveWorkbook.SaveCopyAs(pesanDialog.FileName.ToString());
             ExcelApp.ActiveWorkbook.Saved = true;
