@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Controller\AkunController.cs" />
     <Compile Include="Controller\DataController.cs" />
+    <Compile Include="Controller\ExportExcel.cs" />
     <Compile Include="Controller\GeneralSetting.cs" />
     <Compile Include="Controller\KaryawanController.cs" />
     <Compile Include="Controller\PembukuanController.cs" />
@@ -191,10 +192,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\DataSet\" />
-    <Folder Include="View\Report\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\check.png" />
   </ItemGroup>

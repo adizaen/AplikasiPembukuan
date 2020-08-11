@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using AplikasiPembukuan.Controller;
 using AplikasiPembukuan.Model.Entity;
+using Microsoft.Office.Interop.Excel;
 
 namespace AplikasiPembukuan.View
 {
@@ -27,8 +28,8 @@ namespace AplikasiPembukuan.View
         {
             dgvHarian.Size = new Size(900, 388);
             dgvBulanan.Size = new Size(900, 388);
-            dgvHarian.Location = new Point(28, 207);
-            dgvBulanan.Location = new Point(28, 207);
+            dgvHarian.Location = new System.Drawing.Point(28, 207);
+            dgvBulanan.Location = new System.Drawing.Point(28, 207);
             dgvBulanan.Visible = false;
 
             rdoTanggal.Checked = true;
@@ -56,7 +57,7 @@ namespace AplikasiPembukuan.View
             dgvBulanan.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvHarian.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvHarian.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            dgvHarian.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, FontStyle.Bold);
             dgvHarian.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvHarian.AllowUserToAddRows = false;
             dgvHarian.MultiSelect = false;
@@ -64,7 +65,7 @@ namespace AplikasiPembukuan.View
             dgvHarian.ReadOnly = true;
 
             dgvBulanan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvBulanan.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            dgvBulanan.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, FontStyle.Bold);
             dgvBulanan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBulanan.AllowUserToAddRows = false;
             dgvBulanan.MultiSelect = false;
@@ -257,46 +258,23 @@ namespace AplikasiPembukuan.View
 
         private void SimpanExcel()
         {
-            saveFileDialog1.InitialDirectory = "C:";
-            saveFileDialog1.Title = "Simpan File Excel";
+            pesanDialog.InitialDirectory = "C:";
+            pesanDialog.Title = "Simpan File Excel";
 
             if (rdoTanggal.Checked == true)
-                saveFileDialog1.FileName = "Laporan Harian " + dtTanggal.Value.ToString("dd MMMM yyyy");
+                pesanDialog.FileName = "Laporan Harian " + dtTanggal.Value.ToString("dd MMMM yyyy");
             else if (rdoBulan.Checked == true)
-                saveFileDialog1.FileName = "Laporan Bulan " + cmbBulan.Text + " " + cmbTahun.Text;
+                pesanDialog.FileName = "Laporan Bulan " + cmbBulan.Text + " " + cmbTahun.Text;
             else if (rdoPeriodeTanggal.Checked == true)
-                saveFileDialog1.FileName = "Laporan Periode Harian " + dtTanggalMulai.Value.ToString("dd MMMM yyyy") + " - " + dtTanggalAkhir.Value.ToString("dd MMMM yyyy");
+                pesanDialog.FileName = "Laporan Periode Harian " + dtTanggalMulai.Value.ToString("dd MMMM yyyy") + " - " + dtTanggalAkhir.Value.ToString("dd MMMM yyyy");
             else
-                saveFileDialog1.FileName = "Laporan Periode Bulan " + cmbBulanAwal.Text + " " + cmbTahunAwal.Text + " - " + cmbBulanAkhir.Text + " " + cmbTahunAkhir.Text;
+                pesanDialog.FileName = "Laporan Periode Bulan " + cmbBulanAwal.Text + " " + cmbTahunAwal.Text + " - " + cmbBulanAkhir.Text + " " + cmbTahunAkhir.Text;
 
-            saveFileDialog1.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 97-2003 Workbook (*.xls)|*.xls";
+            pesanDialog.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 97-2003 Workbook (*.xls)|*.xls";
 
-            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            if (pesanDialog.ShowDialog() != DialogResult.Cancel)
             {
-                Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
-                ExcelApp.Application.Workbooks.Add(Type.Missing);
-
-                ExcelApp.Cells[1, 1] = "LAPORAN DATA PEMBUKUAN";
-                ExcelApp.Cells[2, 1] = "Periode : " + dtTanggal.Value.ToString("dd MMMM yyyy");
-
-                for (int i = 1; i < dgvHarian.Columns.Count + 1; i++)
-                {
-                    ExcelApp.Cells[4, i] = dgvHarian.Columns[i - 1].HeaderText;
-                }
-
-                for (int i = 0; i < dgvHarian.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dgvHarian.Columns.Count; j++)
-                    {
-                        ExcelApp.Cells[i + 5, j + 1] = dgvHarian.Rows[i].Cells[j].Value.ToString();
-                    }
-                }
-
-                ExcelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog1.FileName.ToString());
-                ExcelApp.ActiveWorkbook.Saved = true;
-                ExcelApp.Quit();
-
-                MessageBox.Show("Data berhasil diexport!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ExportToExcel();
             }
         }
 
@@ -316,6 +294,122 @@ namespace AplikasiPembukuan.View
                 else
                     MessageBox.Show("Tidak ada record data pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void ExportToExcel()
+        {
+
+            Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+
+            Workbook wb1 = ExcelApp.Workbooks.Add(Type.Missing);
+            Worksheet ws1 = (Worksheet)wb1.Worksheets[1];
+
+
+            ws1.Cells[1, 1] = "LAPORAN DATA PEMBUKUAN";
+
+            if (rdoTanggal.Checked == true)
+                ws1.Cells[2, 1] = "Periode : " + dtTanggal.Value.ToString("dd MMMM yyyy");
+            else if (rdoPeriodeTanggal.Checked == true)
+                ws1.Cells[2, 1] = "Periode : " + dtTanggalMulai.Value.ToString("dd MMMM yyyy") + " - " +
+                                    dtTanggalAkhir.Value.ToString("dd MMMM yyyy");
+
+            for (int i = 1; i < dgvHarian.Columns.Count + 1; i++)
+            {
+                ws1.Cells[4, i] = dgvHarian.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvHarian.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvHarian.Columns.Count; j++)
+                {
+                    ws1.Cells[i + 5, j + 1] = dgvHarian.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // Judul Laporan
+            Range range = ws1.get_Range("A1", "H1");
+            range.Font.Bold = true;
+            range.Font.Size = 12;
+            range.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            range.Merge();
+
+            // Tanggal Periode
+            Range range1 = ws1.get_Range("A2", "H2");
+            range1.Font.Bold = false;
+            range1.Font.Size = 12;
+            range1.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range1.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            range1.Merge();
+
+            // Data baris
+            var rowCount = (dgvHarian.Rows.Count + 4).ToString();
+
+            Range range2 = ws1.get_Range("A4", "H" + rowCount);
+            range2.Borders.LineStyle = XlLineStyle.xlContinuous;
+            range2.Borders.Weight = XlBorderWeight.xlThin;
+            range2.Rows.RowHeight = 16.50;
+            range2.VerticalAlignment = XlVAlign.xlVAlignCenter;
+
+            // Nama Kolom
+            Range range3 = ws1.get_Range("A4", "H4");
+            range3.Font.Bold = true;
+            range3.Font.Size = 11;
+            range3.Rows.RowHeight = 21;
+            range3.VerticalAlignment = XlVAlign.xlVAlignCenter;
+            range3.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            // Set rata tengah kolom 1 dan 2
+            Range range4 = ws1.get_Range("A5", "B" + rowCount);
+            range4.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+
+            Range range5 = ws1.get_Range("A4", "A4");
+            range5.ColumnWidth = 5.30;
+
+            Range range6 = ws1.get_Range("B4", "B4");
+            range6.ColumnWidth = 18;
+
+            Range range7 = ws1.get_Range("C4", "H4");
+            range7.ColumnWidth = 26.71;
+
+            Range range8 = ws1.get_Range("D4", "G4");
+            range8.ColumnWidth = 19;
+
+            // Currency Format
+            Range range9 = ws1.get_Range("D5", "G" + (dgvHarian.Rows.Count + 5).ToString());
+            range9.NumberFormat = @"Rp #.##0;-Rp #.##0";
+
+            Range range10 = ws1.get_Range("B5", "B" + rowCount);
+            range10.NumberFormat = "[$-3809]dd mmmm yyyy";
+
+            if (rdoTanggal.Checked == true)
+            {
+                var countDgv = (dgvHarian.Rows.Count + 5).ToString();
+
+                Range range11 = ws1.get_Range("A" + countDgv, "H" + countDgv);
+                range11.Borders.LineStyle = XlLineStyle.xlContinuous;
+                range11.Borders.Weight = XlBorderWeight.xlThin;
+                range11.Rows.RowHeight = 16.50;
+                range11.VerticalAlignment = XlVAlign.xlVAlignCenter;
+
+                Range range12 = ws1.get_Range("A" + countDgv, "C" + countDgv);
+                range12.Merge();
+                range12.Font.Bold = true;
+                range4.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+
+                ws1.Cells[dgvHarian.Rows.Count + 5, 1] = "TOTAL";
+                ws1.Cells[dgvHarian.Rows.Count + 5, 4].Formula = string.Format("=SUM(D5:D{0})", dgvHarian.Rows.Count + 4);
+                ws1.Cells[dgvHarian.Rows.Count + 5, 5].Formula = string.Format("=SUM(E5:E{0})", dgvHarian.Rows.Count + 4);
+                ws1.Cells[dgvHarian.Rows.Count + 5, 6].Formula = string.Format("=SUM(F5:F{0})", dgvHarian.Rows.Count + 4);
+                ws1.Cells[dgvHarian.Rows.Count + 5, 7].Formula = string.Format("=SUM(G5:G{0})", dgvHarian.Rows.Count + 4);
+            }
+
+
+            ExcelApp.ActiveWorkbook.SaveCopyAs(pesanDialog.FileName.ToString());
+            ExcelApp.ActiveWorkbook.Saved = true;
+            ExcelApp.Quit();
+
+            MessageBox.Show("Data berhasil diexport!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

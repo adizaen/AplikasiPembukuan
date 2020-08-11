@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLaporan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHarian = new Guna.UI.WinForms.GunaDataGridView();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,14 +62,13 @@
             this.cmbTahunAwal = new Guna.UI.WinForms.GunaComboBox();
             this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnExcel = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btnPDF = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvBulanan = new Guna.UI.WinForms.GunaDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pesanDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarian)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBulanan)).BeginInit();
@@ -77,21 +76,21 @@
             // 
             // dgvHarian
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dgvHarian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvHarian.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHarian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHarian.BackgroundColor = System.Drawing.Color.White;
             this.dgvHarian.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHarian.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHarian.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHarian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHarian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHarian.ColumnHeadersHeight = 30;
             this.dgvHarian.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No,
@@ -102,14 +101,14 @@
             this.Hak,
             this.Laba,
             this.Keterangan});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHarian.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHarian.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvHarian.EnableHeadersVisualStyles = false;
             this.dgvHarian.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHarian.Location = new System.Drawing.Point(28, 207);
@@ -642,56 +641,23 @@
             this.btnExcel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
-            // btnPDF
-            // 
-            this.btnPDF.AnimationHoverSpeed = 0.07F;
-            this.btnPDF.AnimationSpeed = 0.03F;
-            this.btnPDF.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(101)))), ((int)(((byte)(199)))));
-            this.btnPDF.BorderColor = System.Drawing.Color.Black;
-            this.btnPDF.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnPDF.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnPDF.CheckedForeColor = System.Drawing.Color.White;
-            this.btnPDF.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPDF.CheckedImage")));
-            this.btnPDF.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnPDF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPDF.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPDF.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPDF.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPDF.ForeColor = System.Drawing.Color.White;
-            this.btnPDF.Image = global::AplikasiPembukuan.Properties.Resources.pdf;
-            this.btnPDF.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnPDF.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPDF.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPDF.Location = new System.Drawing.Point(175, 616);
-            this.btnPDF.Name = "btnPDF";
-            this.btnPDF.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
-            this.btnPDF.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPDF.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPDF.OnHoverImage = null;
-            this.btnPDF.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(134)))), ((int)(((byte)(235)))));
-            this.btnPDF.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPDF.Size = new System.Drawing.Size(137, 36);
-            this.btnPDF.TabIndex = 40;
-            this.btnPDF.Text = "Export to PDF";
-            this.btnPDF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // dgvBulanan
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.dgvBulanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvBulanan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvBulanan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBulanan.BackgroundColor = System.Drawing.Color.White;
             this.dgvBulanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBulanan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBulanan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBulanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBulanan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvBulanan.ColumnHeadersHeight = 30;
             this.dgvBulanan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -699,14 +665,14 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBulanan.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBulanan.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvBulanan.EnableHeadersVisualStyles = false;
             this.dgvBulanan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBulanan.Location = new System.Drawing.Point(28, 423);
@@ -787,7 +753,6 @@
             this.Controls.Add(this.dgvBulanan);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnTampilkan);
-            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.dgvHarian);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -815,7 +780,6 @@
         private Guna.UI.WinForms.GunaRadioButton rdoTanggal;
         private Guna.UI.WinForms.GunaAdvenceButton btnTampilkan;
         private Guna.UI.WinForms.GunaAdvenceButton btnExcel;
-        private Guna.UI.WinForms.GunaAdvenceButton btnPDF;
         private Guna.UI.WinForms.GunaDataGridView dgvBulanan;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kode;
@@ -830,7 +794,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog pesanDialog;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaRadioButton rdoPeriodeBulan;
         private Guna.UI.WinForms.GunaRadioButton rdoPeriodeTanggal;
