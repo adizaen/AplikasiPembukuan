@@ -224,7 +224,7 @@ namespace AplikasiPembukuan.Model.Repository
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByMonth(int bulanAwal, int tahunAwal, int bulanAkhir, int tahunAkhir)
+        public List<Pembukuan> ReadByMonth(int bulan, int tahun)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
@@ -232,17 +232,15 @@ namespace AplikasiPembukuan.Model.Repository
             {
                 string sql = @"SELECT CONCAT(NamaPanjangBulan(MONTH(Tanggal)), ' ', YEAR(Tanggal)) AS Bulan, 
                             SUM(Debit) AS totalDebit, SUM(Kredit) AS totalKredit, (SELECT Saldo FROM Pembukuan 
-                            WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir) 
+                            WHERE (MONTH(Tanggal) = @Bulan) AND (YEAR(Tanggal) = @Tahun) 
                             ORDER BY ID DESC LIMIT 1) AS saldoAkhir, SUM(Laba) AS totalLaba
-                            FROM Pembukuan WHERE (MONTH(Tanggal) BETWEEN @BulanAwal AND @BulanAkhir) AND (YEAR(Tanggal) BETWEEN @TahunAwal AND @TahunAkhir)
+                            FROM Pembukuan WHERE (MONTH(Tanggal) = @Bulan) AND (YEAR(Tanggal) = @Tahun)
                             ORDER BY Bulan ASC";
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
                 {
-                    cmd.Parameters.AddWithValue("@BulanAwal", bulanAwal);
-                    cmd.Parameters.AddWithValue("@BulanAkhir", bulanAkhir);
-                    cmd.Parameters.AddWithValue("@TahunAwal", tahunAwal);
-                    cmd.Parameters.AddWithValue("@TahunAkhir", tahunAkhir);
+                    cmd.Parameters.AddWithValue("@Bulan", bulan);
+                    cmd.Parameters.AddWithValue("@Tahun", tahun);
 
                     using (MySqlDataReader dtr = cmd.ExecuteReader())
                     {

@@ -216,7 +216,7 @@
             this.menuDatabase.Image = global::AplikasiPembukuan.Properties.Resources.database4;
             this.menuDatabase.ImageSize = new System.Drawing.Size(20, 20);
             this.menuDatabase.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.menuDatabase.Location = new System.Drawing.Point(0, 447);
+            this.menuDatabase.Location = new System.Drawing.Point(0, 442);
             this.menuDatabase.Name = "menuDatabase";
             this.menuDatabase.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.menuDatabase.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -250,7 +250,7 @@
             this.menuProfil.Image = global::AplikasiPembukuan.Properties.Resources.setting1;
             this.menuProfil.ImageSize = new System.Drawing.Size(20, 20);
             this.menuProfil.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.menuProfil.Location = new System.Drawing.Point(0, 395);
+            this.menuProfil.Location = new System.Drawing.Point(0, 391);
             this.menuProfil.Name = "menuProfil";
             this.menuProfil.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.menuProfil.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -284,7 +284,7 @@
             this.menuLaporan.Image = global::AplikasiPembukuan.Properties.Resources.report;
             this.menuLaporan.ImageSize = new System.Drawing.Size(20, 20);
             this.menuLaporan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.menuLaporan.Location = new System.Drawing.Point(0, 343);
+            this.menuLaporan.Location = new System.Drawing.Point(0, 340);
             this.menuLaporan.Name = "menuLaporan";
             this.menuLaporan.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.menuLaporan.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -318,7 +318,7 @@
             this.menuPembukuan.Image = global::AplikasiPembukuan.Properties.Resources.book;
             this.menuPembukuan.ImageSize = new System.Drawing.Size(20, 20);
             this.menuPembukuan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.menuPembukuan.Location = new System.Drawing.Point(0, 291);
+            this.menuPembukuan.Location = new System.Drawing.Point(0, 289);
             this.menuPembukuan.Name = "menuPembukuan";
             this.menuPembukuan.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.menuPembukuan.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -352,7 +352,7 @@
             this.menuKaryawan.Image = global::AplikasiPembukuan.Properties.Resources.employee;
             this.menuKaryawan.ImageSize = new System.Drawing.Size(20, 20);
             this.menuKaryawan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.menuKaryawan.Location = new System.Drawing.Point(0, 239);
+            this.menuKaryawan.Location = new System.Drawing.Point(0, 238);
             this.menuKaryawan.Name = "menuKaryawan";
             this.menuKaryawan.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.menuKaryawan.OnHoverBorderColor = System.Drawing.Color.Black;

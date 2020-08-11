@@ -141,14 +141,14 @@ namespace AplikasiPembukuan.Controller
             return listOfBuku;
         }
 
-        public List<Pembukuan> ReadByMonth(int bulanAwal, int tahunAwal, int bulanAkhir, int tahunAkhir)
+        public List<Pembukuan> ReadByMonth(int bulan, int tahun)
         {
             List<Pembukuan> listOfBuku = new List<Pembukuan>();
 
             using (DbContext context = new DbContext())
             {
                 _repository = new PembukuanRepository(context);
-                listOfBuku = _repository.ReadByMonth(bulanAwal, tahunAwal, bulanAkhir, tahunAkhir);
+                listOfBuku = _repository.ReadByMonth(bulan, tahun);
             }
 
             return listOfBuku;
