@@ -26,8 +26,8 @@ namespace AplikasiPembukuan.View
 
         private void FrmLaporan_Shown(object sender, EventArgs e)
         {
-            dgvHarian.Size = new Size(900, 388);
-            dgvBulanan.Size = new Size(900, 388);
+            dgvHarian.Size = new Size(900, 414);
+            dgvBulanan.Size = new Size(900, 414);
             dgvHarian.Location = new System.Drawing.Point(28, 177);
             dgvBulanan.Location = new System.Drawing.Point(28, 177);
             dgvBulanan.Visible = false;

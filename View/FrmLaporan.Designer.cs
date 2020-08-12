@@ -57,13 +57,13 @@
             this.btnTampilkan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnExcel = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dgvBulanan = new Guna.UI.WinForms.GunaDataGridView();
-            this.pesanDialog = new System.Windows.Forms.SaveFileDialog();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesanDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHarian)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBulanan)).BeginInit();
@@ -111,7 +111,7 @@
             this.dgvHarian.RowHeadersVisible = false;
             this.dgvHarian.RowTemplate.Height = 30;
             this.dgvHarian.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHarian.Size = new System.Drawing.Size(900, 203);
+            this.dgvHarian.Size = new System.Drawing.Size(900, 208);
             this.dgvHarian.TabIndex = 30;
             this.dgvHarian.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dgvHarian.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -451,7 +451,7 @@
             this.btnExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnExcel.ImageSize = new System.Drawing.Size(20, 20);
             this.btnExcel.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnExcel.Location = new System.Drawing.Point(28, 616);
+            this.btnExcel.Location = new System.Drawing.Point(28, 610);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(250)))));
             this.btnExcel.OnHoverBorderColor = System.Drawing.Color.Black;
